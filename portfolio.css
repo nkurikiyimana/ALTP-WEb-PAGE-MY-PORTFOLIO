@@ -246,11 +246,12 @@ h1 {
   display: flex;
 }
 .contact .message-container {
-  gap: 1.5rem;
+  gap: 1.7rem;
   display: flex;
   flex-direction: column;
   padding: 5rem;
   align-items: center;
+  margin: 2rem;
 }
 
 .contact .message-container input {
@@ -305,6 +306,19 @@ h1 {
 }
 .blogs h2 {
   text-align: center;
+}
+button{
+  font-size: 3rem;
+}
+.rd{
+  border-radius: 40%;
+
+}
+.rd:hover{
+  color:rgb(241, 8, 8);
+  padding: 2rem;
+  background-color: #14f7db;
+  border-radius: 20%;
 }
 #login {
   padding: 5rem;

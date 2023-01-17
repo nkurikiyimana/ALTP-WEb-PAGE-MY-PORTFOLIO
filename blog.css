@@ -1,0 +1,122 @@
+*{
+  font-family: "Nunito", sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  transition: all 0.2s linear;
+}
+*::selection {
+  background: var(--yellow);
+  color: #333;
+}
+html {
+  font-size: 50px;
+  overflow-x: hidden;
+}
+
+html::-webkit-scrollbar-trck {
+  width: 4rem;
+}
+
+html::-webkit-scrollbar-trck {
+  background: rgb(35, 172, 103);
+}
+
+html::-webkit-scrollbar-trck {
+  background: white;
+}
+
+body {
+  background: rgb(241, 236, 236);
+  overflow-x: hidden;
+  padding: 8rem;
+  padding-top: 4rem;
+}
+
+#home{
+  text-align: center;
+}
+#home p{
+  font-size: 3rem;
+  color:rgb(0, 195, 255);
+}
+
+#home p:hover{
+  font-size: 3rem;
+  color:rgb(7, 11, 12);
+  text-transform: uppercase;
+}
+img{
+  width: 1000px;
+
+}
+a{
+  display: inline;
+  justify-items: space-evenly;
+  width: fit-content;
+  margin: 5rem;
+  background-color: black;
+  border:  block solid ;
+  border-radius: 10%;
+}
+
+a:hover{
+  display: inline;
+  justify-items: space-evenly;
+  margin: 5rem;
+  padding: 1rem;
+  color: white;
+  background-color: rgb(201, 167, 14);
+  border-radius: 50%;
+}
+a  .s2, .s3, .s4, .s5{
+ color:rgb(146, 127, 255);
+ font-size: 1.2rem;
+}
+
+input {
+  font-size: 2rem;
+  color: rgb(73, 179, 206);
+  padding: 1rem;
+  width: fit-content;
+  margin: auto;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+textarea{
+font-size: 2rem;
+  color: rgb(73, 179, 206);
+  padding: 0rem;
+  width: fit-content;
+  margin: auto;
+  border-radius: 1rem;
+  text-align: center;}
+
+#btn{
+  font-size: 2rem;
+  color: rgb(73, 179, 206);
+  padding: 1rem;
+  width: fit-content;
+  margin: auto;
+  border-radius: 1rem;
+  text-align: center;
+
+}
+.comments-form{
+  font-size: 3rem;
+  color: white;
+  background-color: #2b3035;
+  padding: 3rem;
+  width: fit-content;
+  margin: auto;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+
+
+
