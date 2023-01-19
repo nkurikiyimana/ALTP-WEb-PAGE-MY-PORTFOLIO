@@ -1,0 +1,26 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+body{
+  background-color: #c4dcec;
+  color: #8dd1e6;  
+  font-family: 'Roboto'; 
+  overflow-x: hidden;
+}
+
+@media only screen and (max-width: 425px){
+  #navbar{
+      display: none;
+  }
+  body{
+      display: flex;
+      justify-content: center;
+  }
+
+  .admin-title{
+    font-size: 60px;
+    color:#21EFEF;
+    padding: 20px 0px 0px 50px;
+}

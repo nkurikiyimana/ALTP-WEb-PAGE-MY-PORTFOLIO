@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sinup Page</title>
+</head>
+<body>
+  
+  <form action="">
+    <div class="container">
+      <h1 class="j">Sin Up</h1>
+      <p class="h"> Please fill in this form to create an account.</p>
+      <hr>
+
+<div class="form">
+<label for="email"><b>Email</b></label>
+    <input type="text" placeholder="email" name="email" required>
+
+    <iconify-icon icon="material-symbols:check-circle-rounded"></iconify-icon>
+<iconify-icon icon="clarity:exclamation-circle-solid"></iconify-icon>
+<small>error message</small><br>
+
+    <label for="password"><b>Password</b></label>
+    <input type="password" placeholder=" Password" name="psw" required>
+
+    <iconify-icon icon="material-symbols:check-circle-rounded"></iconify-icon>
+<iconify-icon icon="clarity:exclamation-circle-solid"></iconify-icon>
+<small>error message</small>
+<br>
+
+    <label for="psw-repeat"><b>Comferm Password</b></label>
+    <input type="password" placeholder="comferm Password" name="psw-repeat" required>
+
+    <iconify-icon icon="material-symbols:check-circle-rounded"></iconify-icon>
+<iconify-icon icon="clarity:exclamation-circle-solid"></iconify-icon>
+<small>error message</small><label>
+
+      <input type="checkbox" checked="checked" name="remember" class="k"> Remember me  </label>
+
+    <p class="t">By creating an account you agree to our <a href="term.html" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+    <div class="clearfix">
+      <button type="button" class="cancelbtn">Cancel</button>
+      <button type="submit" class="signupbtn">Sign Up</button>
+    </div>
+  </div>
+  </form>
+
+ 
+  <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+</body>
+<style>
+  *{
+    margin:0;
+    padding:0;
+    background-image:rgb(111, 111, 247);
+  }
+
+  body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #fbfcfc;
+  }
+
+  
+  .container{
+    margin: 1.3em;rem;
+    background-image:url(../images/sinn.jpg);
+    
+
+  }
+  .h{
+    color:rgb(2, 24, 26);
+    font-size: 2rem;
+  font-weight: bold;
+  }
+  .j{
+    font-size: 3.5rem;
+    text-transform: capitalize;
+    color: rgb(70, 20, 151);
+    font-weight: bold;
+
+  }
+  .t{
+    font-size: 2rem;
+  }
+  b{
+    font-size: 2rem;
+  }
+  
+
+  
+  /* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 1%;
+  padding: .3rem;
+  margin: 2px 0 1px 0;
+  width:fit-content;
+  display:flex;
+  border: none;
+  background: white;
+  border: solid rgb(156, 204, 207);
+  font-size: 1.7rem;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: rgb(253, 252, 252);
+  outline: none;
+  width:fit-content;
+}
+
+hr {
+  border: 6px solid #4275c2;
+  margin-bottom: 40px;
+  width: 65%;
+}
+
+
+/* Set a style for all buttons */
+button {
+  background-color: #4e32b4;
+  color: white;
+  padding: 8px 2px;
+  margin: 2px 0;
+  border: none;
+  cursor: pointer;
+  width: 1%;
+  opacity: 0.9;
+  font-size: 2rem;
+ 
+}
+
+button:hover {
+  opacity:1;
+  color: rgb(0, 217, 255);
+  text-shadow: #04AA6D;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 8px 2px;
+  background-color: #07065c;
+ 
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: right;
+  width: 30%;
+  padding-right: 1rem;;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.form iconify-icon{
+  display: absolute;
+ top:40rem;
+right: 10px;
+
+  
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+    width: 100%;
+  }
+}
+
+</style>
+</html>

@@ -1,70 +1,74 @@
 @import url("https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,200;0,300;0,500;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,500;1,900&display=swap");
 
-:root {
-  --yellow: #f9ca24;
-}
-
-* {
-  font-family: "Nunito", sans-serif;
-  padding: 0;
+*{
+  margin: 0;
+  padding:0;
+  font-family: "poppin", sans-serif;
   box-sizing: border-box;
+}
+.header{
+  height: 4vh;
+  width:100%;
+  padding:0%;
+  background-color: rgb(41, 44, 44);
+ position:fixed;
+ 
+}
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.log{
+  float: left;
+  width:200px
+}
+.home{
+  display:flex;
+}
+
+.links{
+  padding: 28px 0;
+}
+
+.links li{
+  display:inline-block;
+  margin: 0 15px;
+}
+
+.links li a{
   text-decoration: none;
-  outline: none;
-  border: none;
-  text-transform: capitalize;
-  transition: all 0.2s linear;
+  color: aliceblue;
+  padding: 8px 0;
 }
-*::selection {
-  background: var(--yellow);
-  color: #333;
-}
-html {
-  font-size: 30px;
-  overflow-x: hidden;
+body{
+  
+  top:6rem
+  padding:.5rem;
+  background-color: #1a1a1a;
 }
 
-html::-webkit-scrollbar-trck {
-  width: 4rem;
-}
 
-html::-webkit-scrollbar-trck {
-  background: rgb(35, 172, 103);
-}
-
-html::-webkit-scrollbar-trck {
-  background: white;
-}
-
-body {
-  background: rgb(19, 18, 18);
-  overflow-x: hidden;
-  padding: 34rem;
-  padding-top: 4rem;
-}
-
-.home {
-  min-height: 90vh;
-  padding: 1rem;
-}
 .about {
   min-height: 100vh;
+  min-width: 70%;
   padding: 1rem;
-  padding: 8rem;
 }
 
 .btn {
-  padding: 1.5rem;
+  padding: 1rem;
   background: #333;
   color: #24abf9;
   cursor: pointer;
   margin-top: 1rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
   border-radius: 5rem;
   /* width: 10rem; */
   display: flex;
   align-items: center;
-  gap: 11px;
+  gap: 5px;
 }
 
 .btn i {
@@ -87,7 +91,7 @@ body {
 
 .about .heading span {
   color: yellow;
-  padding: 5rem;
+  padding: 1rem;
   border-radius: 0.1rem solid rgb(161, 161, 127);
 }
 .about .row {
@@ -95,12 +99,12 @@ body {
   align-items: center;
   justify-content: center;
   /* flex-wrap:wrap; */
-  padding: 1rem 0;
+  padding: 2rem;
 }
 
 .about .row .info {
   flex: 1 1 48rem;
-  padding: 2rem 1rem;
+  padding: 6rem 1rem;
   padding-left: 6rem;
 }
 
@@ -126,24 +130,23 @@ body {
 .about .row .counter .box {
   display: flex;
   /* width:15rem; */
-  gap: 5re;
+  gap: 7rem;
   background: #646262;
   text-align: center;
-  flex: 1 1 43rem;
+  flex: 1 1 40rem;
   padding: 1rem;
   margin: 2rem;
-  border-radius: 40px;
+  border-radius: 1.5px;
   max-width: fit-content;
 }
 
 .about .row .counter .box span {
-  font-size: 2.3rem;
-
+  font-size: 1.3rem;
   color: yellow;
 }
 
 .about .row .counter .box h3 {
-  font-size: 2rem;
+  font-size: 1rem;
   color: rgb(255, 255, 253);
   margin: 0;
 }
@@ -159,44 +162,44 @@ h1 {
   align-items: center;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  padding: 1rem 0;
-  padding-left: 3rem;
+  padding: .1rem 0;
+  padding-left: .1rem;
 }
 
 .education .box-container .box {
-  width: 27rem;
-  margin: 0rem 3.5rem 5rem;
-  padding-left: 7rem;
+  width: 13rem;
+  margin: 0rem 2.5rem 5rem;
+  padding-left: .3rem;
   border-left: 0.2rem solid #fff;
   position: relative;
 }
 
 .education .box-container span {
-  font-size: 1.3rem;
+  font-size: 1rem;
   background: #222;
   color: #222;
-  border-radius: 5rem;
+  border-radius: 1.5rem;
   padding: 1rem 1.1rem;
   color: #eee;
 }
 
 .education .box-container h3 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: rgb(134, 184, 17);
-  padding-top: 1.3rem;
+  padding-top: .13rem;
 }
 
 .education .box-container p {
-  font-size: 2rem;
+  font-size: 1.2rem;
   color: #fff;
-  padding-top: 1.3rem;
+  padding-top: .1rem;
 }
 
 .portfolio {
-  padding: 10rem;
+  padding: .1rem;
 }
 .portfolio h1 {
-  font-size: 3rem;
+  font-size: .3rem;
 }
 .portfolio .box-container {
   display: flex;
@@ -205,8 +208,8 @@ h1 {
 }
 
 .portfolio .box-container .box img {
-  width: 33rem;
-  height: 32rem;
+  width: 20rem;
+  height: 17rem;
   cursor: pointer;
 }
 
@@ -215,16 +218,16 @@ h1 {
 }
 
 .contact .my-info {
-  font-size: 3rem;
+  font-size: 1.9rem;
   color: #fff;
-  padding: 5rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 1rem;
 }
 
 .contact .my-info span {
-  margin-left: 2rem;
+  margin-left: 8rem;
 }
 
 .contact .my-info div,
@@ -239,24 +242,24 @@ h1 {
 
 .contact .my-info .name {
   color: yellow;
-  font-size: 2rem;
+  font-size: 1.3rem;
 }
 
 .contact {
   display: flex;
 }
 .contact .message-container {
-  gap: 1.7rem;
+  gap: 1rem;
   display: flex;
   flex-direction: column;
   padding: 5rem;
   align-items: center;
-  margin: 2rem;
+  margin: 3rem;
 }
 
 .contact .message-container input {
   background-color: #646262;
-  font-size: 3rem;
+  font-size: 1.3rem;
   padding: 1rem;
   border-radius: 1rem;
 }
@@ -270,8 +273,8 @@ h1 {
 }
 
 .skills {
-  padding: 10rem;
-  font-size: 2rem;
+  padding: 4rem;
+  font-size: 1.2rem;
   color: white;
 }
 .skills .box-container {
@@ -279,30 +282,32 @@ h1 {
   gap: 3rem;
 }
 .skills img {
-  width: 30rem;
+  width: 25rem;
 }
 
 .blog {
   flex: 0.5;
 }
 .blogs {
-  font-size: 2rem;
-  padding: 2rem;
+  font-size: 1rem;
+  padding: 1rem;
   color: white;
   display: flex;
   flex-wrap: wrap;
-  gap: 3rem;
+  gap: 1.5rem;
 }
 
 .blogs .content {
   background-color: #646262;
   padding: 2rem;
+  margin:2rem;
   border-radius: 2rem;
 }
 
 .blogs img {
   width: 100%;
   height: 20rem;
+  padding:2rem;
 }
 .blogs h2 {
   text-align: center;

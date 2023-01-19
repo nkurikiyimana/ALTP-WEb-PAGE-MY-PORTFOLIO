@@ -16,21 +16,28 @@
           <a class="blog-page" href="portfolio.html"> 
               <img class="logo" src="images/lorem.png">
           </a>
-           <p>Web Developer</p>
+          <!-- Load icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- The form -->
+<form class="example" action="action_page.php">
+  <input type="text" placeholder="Search.." name="search">
+  <button class="s" type="submit"><i class="fa fa-search"></i></button>
+</form>
+           <p><span>Blogs</span> Lorem <span>Ipsum</span></p>
       </div>
-      <div>
-          <a class="s1" href="#para1">Section 1</a>
-          <a class="s2" href="#para2">Section 2</a>
-          <a class="s3" href="#para3">Section 3</a>
-          <a class="s4" href="#para4">Section 4</a>
-          <a class="s5" href="#para5">Section 5</a>
+      <div class="section">
+          <a class="s1"<a href="#section.html">Section 1</a></a>
+          <a class="s2" href="#section.html">Section 2</a>
+          <a class="s3" href="#section.html">Section 3</a>
+          <a class="s4" href="#section.html">Section 4</a>
+          <a class="s5" href="#section.html">Section 5</a>
         </div>
   </nav>
 
   <div class="blog-container">
           <h2>Lorem Ipsum</h2>
-          <img class="blog" src="images/images.jpeg">
-
+         
           <section id="para1">
               <h3>What is Lorem Ipsum?</h3>
               <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
@@ -144,16 +151,12 @@
           </section>
   </div>
 
-  <div>
-    <span>Helpful??</span><br> <iconify-icon icon="ei:like"></iconify-icon>
-    <span>Yes</span>
-    <br><iconify-icon icon="mdi:dislike-outline"></iconify-icon>
-    <span>No</span>
+  <div class="like">
+    <span>Helpful??</span><br>  <button><iconify-icon icon="ei:like"></iconify-icon></button>
+   <span>Yes</span>
+    <br><button><iconify-icon icon="mdi:dislike-outline"></iconify-icon>
+    </button><span>No</span>
     </div>
-
- <div class="comments-likes">
-      <a class="back" href="blogs.html">Back To Blogs</a>
- </div>
   
 <form class="comments-form">
           <input id="name" type="text" placeholder="Names">
@@ -161,7 +164,11 @@
           <button id="btn" type="submit">Post</button>
 </form>
 
- 
+
+</div>
+
+<script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
   <script src="blogs.js"></script>
 </body>
+
 </html>

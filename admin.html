@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="admin.css">
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+</head>
+<body>
+  <header>
+      <nav id="navbar">
+          <div id="home">
+              <a class="landing-page" href="portfolio.html"> 
+                  <img class="logo" src="images/lorem.png">
+               </a>
+               <p>Web Developer</p>
+          
+          <a class="add-post" href="#add-post">Add a post</a><hr>
+          <a class="blogs-articles" href="#blog">Blogs</a><hr>
+          <a class="queries" href="#queries-socials">Queries & Socials</a><hr>
+
+          <a href="portfolio.html"><button id="logoutbtn" type="button">Logout</button></a>
+        </div>
+     </nav>
+  </header>
+
+  <h2 class="admin-title">Admin Panel</h2>
+
+  <section id="add-post">
+      <h2>Add a Post</h2>
+
+      <form class="add-post-form>
+          <label id="labels" for="topic">Topic of the Blog</label>
+          <input id="topic" type="text">
+          <label id="labels" for="title">Title of the Blog</label>
+          <input id="title" type="text">
+          <label id="labels" for="post">Blog Description</label>
+          <textarea id="post"></textarea>
+          <a href="blogs.html"><button id="postbtn" type="button">Preview</button></a>
+      </form>
+  </section>
+
+  <section id="blog">
+      <h2 class="blog-title">Blogs</h2>
+      <div class="blogs-part">
+          <p class="blog1">Title of the blog</p>
+          <button id="editbtn-b1" type="button">Edit</button>
+          <button id="deletebtn-b1" type="button">Delete</button>
+
+          <p class="blog2">Title of the blog</p>
+          <button id="editbtn-b2" type="button">Edit</button>
+          <button id="deletebtn-b2" type="button">Delete</button>
+
+          <p class="blog3">Title of the blog</p>
+          <button id="editbtn-b3" type="button">Edit</button>
+          <button id="deletebtn-b3" type="button">Delete</button>
+
+          <p class="blog4">Title of the blog</p>
+          <button id="editbtn-b4" type="button">Edit</button>
+          <button id="deletebtn-b4" type="button">Delete</button>
+
+          <p class="blog5">Title of the blog</p>
+          <button id="editbtn-b5" type="button">Edit</button>
+          <button id="deletebtn-b5" type="button">Delete</button>
+      </div>
+      <div class="nav-btns">
+          <div class="triangle1"></div>
+          <div class="triangle2"></div>
+      </div>
+
+  </section>
+     
+
+  <section id="queries-socials">
+      <h2 class="socials">Queries & Socials</h2>
+      <h4 class="media-visits">Social Media Visits</h4>
+      <div class="media-container">
+          <img class="ig-logo" src="images/instagram.png">
+          <p>10</p>
+          <img class="in-logo" src="images/linkedin.png">
+          <p>3</p>
+          <img class="gt-logo" src="images/github.png">
+          <p>5</p>
+      </div>
+
+      <div class="triangle5"></div>
+
+      <h4 class="new-queries">New Queries</h4>
+      <div class="new-queries-container">
+          <p class="q-name">Name: Faustin</p>
+          <p class="q-email">Email: nkurufaustin12@gmail.com</p>
+          <p class="q-message">Message: Sed ut perspiciatis unde <br>
+              omnis iste natus error sitSed</p>
+      </div>
+
+      <div class="triangle6"></div>
+
+      <button id="msg-deletebtn" type="button">Delete</button>
+
+      <h4 class="all-queries">List Of All Queries</h4>
+
+      <div class="new-queries-container">
+        <p class="q-name">Name: Faustin</p>
+        <p class="q-email">Email: nkurufaustin12@gmail.com</p>
+        <p class="q-message">Message: Sed ut perspiciatis unde <br>
+            omnis iste natus error sitSed</p>
+    </div>
+  </section>
+  <a class="logoutbtn"href="index.html"><button id="logoutbtn" type="button">Logout</button></a>
+
+  <script src="admin.js"></script>
+  
+
+</body>
+<style>
+    *{
+  padding: 0.7px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+nav{
+    font-size: 2rem;
+    padding-left: 4rem;
+    
+}
+nav p{
+    
+    font-size: 2rem;
+    color: blue; 
+}
+#logoutbtn{
+    padding:.9rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 10%;
+}
+img{
+    width:170px
+}
+body{
+  background-color:white;
+  color: #8dd1e6;  
+  font-family: 'Roboto'; 
+  overflow-x: hidden;
+}
+.admin-title{
+    color:green;
+    padding:3rem;
+}
+
+    #add-post h2{
+        color: rgb(161, 208, 226);
+        font-size:3rem;
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+    .add-post-form{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    #labels{
+        padding: 5px 0px 15px 10px;
+        font-size:2rem
+    }
+    
+    #topic,
+    #title{
+        height: 40px;
+        background-color: rgb(221, 225, 228);
+        border: 0px;
+        position: relative;
+    }
+    #post{
+        height: 50px;
+        background-color: #D9D9D9;
+    }
+    #blog-image-btn{
+        width: 100%;
+        height: 40px;
+        font-size: 3rem;
+        position: relative;
+        margin-top: 10px;
+        border-radius: 5px;
+        border: 0px;
+    }
+    #postbtn{
+        width: 100%;
+        height: 70px;
+        font-size: 25px;
+        position: relative;
+        margin-top: 10px;
+        border-radius: 5px;
+        border: 0px;
+    }
+
+
+@media only screen and (max-width: 425px){
+  #navbar{
+      display: none;
+  }
+  
+
+  tle{
+    font-size: 4rem;
+    color:#b34d85;
+    
+}
+</style>
+</html>

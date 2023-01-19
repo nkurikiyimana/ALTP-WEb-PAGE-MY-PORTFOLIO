@@ -12,16 +12,12 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <script src="https://unpkg.com/feather-icons"></script>
-  </head>
-  <body>
-    <header>
-      <div class="user">
-        <img src="./Images/Resume pc.jpg" alt="Faustin" />
-        <h3 class="name">NKURU Faustin</h3>
-        <p class="post">Software Developer</p>
-      </div>
-      <nav class="navbar">
-        <ul>
+  <head>
+    <body>
+      <div class="header">
+        <nav class="header">
+          
+        <ul class="links">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#education">EDUCATION</a></li>
@@ -31,10 +27,10 @@
           <li><a href="#blogs">Blogs</a></li>
           <li><a href="#login">Log in</a></li>
         </ul>
-      </nav>
-    </header>
+      </div>
+    </nav>
 
-    <div id="menu" class="fas fa-bars">
+
       <section class="home" id="home">
         <h3>HI THERE !</h3>
         <h1>I'AM <span>Faustin Nkuru</span></h1>
@@ -315,12 +311,32 @@
           <a href="blogs.html">
             <button class="btn loginbtn" type="onsubmit">Login</button></a>
           <p class="loginmsg">Forgot Password?</p>
+          
         </form>
       </div>
+      <div>
+        <a href="sinup.html">
+          <button class="btn loginbtn" type="onsubmit">Sin Up</button></a>
+      </div>
     </section>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
     <script src="js/portfolio.js"></script>
+    <script>  
+      function validateform(){  
+      var name=document.login-form.name.value;  
+      var password=document.login-form.password.value;  
+        
+      if (name==null || name==""){  
+        alert("Name can't be blank");  
+        return false;  
+      }else if(password.length<6){  
+        alert("Password must be at least 6 characters long.");  
+        return false;  
+        }  
+      }
+    </script>
   </body>
 </html>

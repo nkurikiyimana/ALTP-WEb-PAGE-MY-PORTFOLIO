@@ -1,6 +1,6 @@
 *{
   font-family: "Nunito", sans-serif;
-  padding: 0;
+  padding: 0.3;
   box-sizing: border-box;
   text-decoration: none;
   outline: none;
@@ -8,12 +8,24 @@
   text-transform: capitalize;
   transition: all 0.2s linear;
 }
+button{
+  padding:1rem;
+  background-color:green
+}
+input{
+  padding:1rem;
+  background-color:rgb(243, 248, 243)
+}
+.example{
+  float:right;
+}
 *::selection {
   background: var(--yellow);
-  color: #333;
+  color: rgb(55, 136, 82);
 }
+
 html {
-  font-size: 50px;
+  font-size: 20px;
   overflow-x: hidden;
 }
 
@@ -26,59 +38,70 @@ html::-webkit-scrollbar-trck {
 }
 
 html::-webkit-scrollbar-trck {
-  background: white;
+  background: rgb(26, 16, 16);
 }
 
 body {
   background: rgb(241, 236, 236);
   overflow-x: hidden;
-  padding: 8rem;
-  padding-top: 4rem;
+  padding: 1rem;
+  padding-top: 1rem;
 }
 
 #home{
   text-align: center;
 }
 #home p{
-  font-size: 3rem;
+  font-size: 5rem;
   color:rgb(0, 195, 255);
+}
+span{
+  color:rgb(0, 21, 209)
 }
 
 #home p:hover{
-  font-size: 3rem;
+  font-size: 1rem;
   color:rgb(7, 11, 12);
   text-transform: uppercase;
 }
 img{
-  width: 1000px;
+  width: 170px;
+  float:left;
+
+}
+.section{
+  display: inline-block;
+  padding-left: 2rem;
+  margin-left: 9rem;
 
 }
 a{
-  display: inline;
+  
   justify-items: space-evenly;
   width: fit-content;
-  margin: 5rem;
-  background-color: black;
-  border:  block solid ;
+  margin: 2rem;
+  background-color: rgb(89, 212, 206);
   border-radius: 10%;
+ 
 }
 
 a:hover{
   display: inline;
   justify-items: space-evenly;
-  margin: 5rem;
+  margin: 2rem;
   padding: 1rem;
   color: white;
   background-color: rgb(201, 167, 14);
-  border-radius: 50%;
+  border-radius: 20%;
 }
-a  .s2, .s3, .s4, .s5{
+a  .s1, .s1, .s2, .s3, .s4, .s5{
  color:rgb(146, 127, 255);
- font-size: 1.2rem;
+ font-size: 2rem;
+ color:white;
 }
 
 input {
-  font-size: 2rem;
+  font-size: .5rem;
   color: rgb(73, 179, 206);
   padding: 1rem;
   width: fit-content;
@@ -88,7 +111,7 @@ input {
 }
 
 textarea{
-font-size: 2rem;
+font-size: 1.5rem;
   color: rgb(73, 179, 206);
   padding: 0rem;
   width: fit-content;
@@ -97,24 +120,45 @@ font-size: 2rem;
   text-align: center;}
 
 #btn{
-  font-size: 2rem;
+  font-size: 1.2rem;
   color: rgb(73, 179, 206);
   padding: 1rem;
   width: fit-content;
   margin: auto;
   border-radius: 1rem;
   text-align: center;
+  float:right;
 
 }
+span{
+  font-size: 2rem;
+}
 .comments-form{
-  font-size: 3rem;
+  font-size: 1.3rem;
   color: white;
-  background-color: #2b3035;
-  padding: 3rem;
+  background-color: #7ea2c7;
+  padding: 2rem;
   width: fit-content;
   margin: auto;
   border-radius: 1rem;
   text-align: center;
+  float:right;
+}
+
+.like{
+  padding-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+button{
+  border-radius: 50%;
+}
+button:hover{
+ color:aquamarine;
+ text-transform: uppercase;
+ background-color: beige;
 }
 
 
