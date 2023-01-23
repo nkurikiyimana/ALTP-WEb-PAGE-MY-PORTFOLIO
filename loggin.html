@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login version</title>
+
+</head>
+<body>
+  <form onsubmit="return validateLogin()">
+    Name:<input type="email" id="username" name="username"><br>
+    Password:<input type="password" id="password" name="password">
+    <input type="submit" value="Log In">
+  </form>
+  <script>
+    function validateLogin() {
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+
+  if (username.length < 9) {
+    alert("Username must be at least 9 characters long");
+    return false;
+  }
+
+  if (password.length < 6) {
+    alert("Password must be at least 6 characters long");
+    return false;
+  }
+  return true;
+
+   localStorage.setItem("username", password.value);
+
+
+const saved = localStorage.getItem("username");
+username.value = savedusername;
+const saved1 = localStorage.getItem("password");
+password.value = saved1password;
+    }
+
+    
+  </script>
+ 
+</body>
+</html>

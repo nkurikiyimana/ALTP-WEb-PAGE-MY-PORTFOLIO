@@ -23,6 +23,9 @@
 <form class="example" action="action_page.php">
   <input type="text" placeholder="Search.." name="search">
   <button class="s" type="submit"><i class="fa fa-search"></i></button>
+
+  <a href="admin.html"><button id="logoutbtn" type="button">Admin Panne</button></a>
+
 </form>
            <p><span>Blogs</span> Lorem <span>Ipsum</span></p>
       </div>
@@ -161,11 +164,22 @@
 <form class="comments-form">
           <input id="name" type="text" placeholder="Names">
           <textarea id="comment" placeholder="Add a comment"></textarea>
-          <button id="btn" type="submit">Post</button>
+          <button id="btn" type="button" value="Post" onclick="savecomment()"></button>
 </form>
-
-
 </div>
+<script>
+ // Get the comment from an input element
+const comment = document.getElementById("comment").value;
+
+// Save the comment to localStorage
+localStorage.setItem("savedComment", comment);
+
+// Retrieve the saved comment from localStorage
+const savedComment = localStorage.getItem("savedComment");
+console.log(savedComment);
+
+
+</script>
 
 <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
   <script src="blogs.js"></script>

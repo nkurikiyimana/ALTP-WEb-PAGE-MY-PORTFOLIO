@@ -136,6 +136,20 @@
     <button id="btn" type="submit">Post</button>
   </form>
   </div>
+  
+  <script>
+    // Check browser support
+    if (typeof(Storage) !== "undefined") {
+      // Store
+      localStorage.setItem("lastname", "Smith");
+      // Retrieve
+      document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+    } else {
+      document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+    }
+    </script>
+  
+  
   <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
 </body>
 <style>

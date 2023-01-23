@@ -1,0 +1,39 @@
+
+  <!DOCTYPE html>
+<html>
+<head>
+  <title>Local Storage Example</title>
+</head>
+<body>
+  <form>
+    <label>Enter a value to save:</label>
+    <input type="text" id="inputValue">
+    <button type="button" onclick="saveValue()">Save</button>
+  </form>
+  <br>
+  <button type="button" onclick="retrieveValue()">Retrieve Saved Value</button>
+  <p id="output"></p>
+
+  <script>
+    function saveValue() {
+      // Get the value from the input field
+      var inputValue = document.getElementById("inputValue").value;
+
+      // Save the value to local storage
+      localStorage.setItem("savedValue", inputValue);
+    }
+
+    function retrieveValue() {
+      // Get the saved value from local storage
+      var savedValue = localStorage.getItem("savedValue");
+
+      // Display the saved value on the page
+      var output = document.getElementById("output");
+      output.innerHTML = "Saved Value: " + savedValue;
+    }
+  </script>
+</body>
+</html>
+
+</body>
+</html>

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Portfolio</title>
     <link rel="stylesheet" href="portfolio.css" />
+   
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awaresome/5.15.2/css/all.min.css"
@@ -30,8 +31,9 @@
       </div>
     </nav>
 
-
+<img src="images/me.jpg" alt="Faustion">
       <section class="home" id="home">
+        <div class="hom">
         <h3>HI THERE !</h3>
         <h1>I'AM <span>Faustin Nkuru</span></h1>
         <p>
@@ -45,6 +47,7 @@
             about me
             <iconify-icon icon="mdi:user-circle"></iconify-icon></button
         ></a>
+      </div>
       </section>
     </div>
 
@@ -304,15 +307,49 @@
     <section id="login">
       <div class="login-container">
         <h2>Login</h2><br><iconify-icon icon="ph:google-logo-fill"></iconify-icon>
-        <form id="login-form">
-          <iconify-icon icon="mdi-light:email"></iconify-icon><input id="email" type="email" placeholder="Email" required /><br />
+        <form onsubmit="return validateLogin()">
+          <iconify-icon icon="mdi-light:email"></iconify-icon>
+          
+          <input id="email" type="email" placeholder="Email" required /><br />
           <iconify-icon icon="mdi:password-alert-outline"></iconify-icon>
-<input id="login-password" type="password" placeholder="Password" visible required/><br/>          
-          <a href="blogs.html">
-            <button class="btn loginbtn" type="onsubmit">Login</button></a>
+
+       <input id="login-password" type="password" placeholder="Password" visible required/><br/>          
+      
+            <button class="loginbtn" type="onsubmit">Log In</button>
           <p class="loginmsg">Forgot Password?</p>
           
         </form>
+        <script>
+          
+  var username = document.getElementById("email").value;
+  var password = document.getElementById("login-passward").value;
+  function validateLogin() {
+  if (username.length < 9) {
+    alert("Username must be at least 3 characters long");
+    return false;
+  }
+
+  if (passward.length < 6) {
+    alert("Password must be at least 6 characters long");
+    return false;
+  }
+  return true;
+}
+
+var data = localStorage.getItem('validatelogin','username.value');
+  
+
+   function validateLogin() {
+      // Get the value from the input field
+      var inputValue = document.getElementById("email").value;
+
+      // Save the value to local storage
+      localStorage.setItem("validateLogin()", inputValue);
+      localStorage.setItem("validateLogin()",passward);
+    }
+
+    
+        </script>
       </div>
       <div>
         <a href="sinup.html">
@@ -323,20 +360,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
-    <script src="js/portfolio.js"></script>
-    <script>  
-      function validateform(){  
-      var name=document.login-form.name.value;  
-      var password=document.login-form.password.value;  
-        
-      if (name==null || name==""){  
-        alert("Name can't be blank");  
-        return false;  
-      }else if(password.length<6){  
-        alert("Password must be at least 6 characters long.");  
-        return false;  
-        }  
-      }
-    </script>
+    
+   
   </body>
 </html>

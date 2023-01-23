@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <script defer src="./login.js"></script>
+</head>
+<body>
+<section id="login">
+  <div class="login-container">
+    <h2>Login</h2><br><iconify-icon icon="ph:google-logo-fill"></iconify-icon>
+    <form id="login-form">
+      <iconify-icon icon="mdi-light:email"></iconify-icon>
+      
+      <input id="email" type="email" placeholder="Email" required /><br />
+      <iconify-icon icon="mdi:password-alert-outline"></iconify-icon>
+
+   <input id="login-password" type="password" placeholder="Password" visible required/><br/>          
+      <a href="blogs.html">
+        <button class="btn loginbtn"  onclick="login()" >Login</button></a>
+      <p class="loginmsg">Forgot Password?</p>
+      
+    </form>
+  </div>
+  <div>
+    <a href="sinup.html">
+      <button class="btn loginbtn" type="onsubmit">Sin Up</button></a>
+  </div>
+</section>
+
+
+<script>
+  function login() {
+
+var email = document.getElementById('email').value;
+var passward = document.getElementById('login-passward').value;
+console.log(email,login-passward);
+
+var email1= localStorage.getItem("email1");
+var pass1= localStorage.getItem("pass1");
+if(email==email1 && pass==pass1){
+  window.location.href="partfolio.html";
+}
+else{
+  alert(" email and pass is incorrect")
+
+}
+}
+</script>
+
+</body>
+</html>
