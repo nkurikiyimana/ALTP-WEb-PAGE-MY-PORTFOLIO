@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn DOM</title>
+  <head>
+    <body>
+
+      <form id="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message"></textarea><br>
+        <input type="submit" value="Submit">
+      </form>
+      
+  <style>
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 50px;
+}
+
+#contact-form {
+  width: 500px;
+  margin: 0 auto;
+  text-align: left;
+}
+label {
+  font-weight: bold;
+}
+input[type="text"], input[type="email"], textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+
+  </style>
+
+<script>
+
+const form = document.getElementById("contact-form");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
+  
+  // Store data in local storage
+  localStorage.setItem("name", name);
+  localStorage.setItem("email", email);
+  localStorage.setItem("message", message);
+
+  // Show data on the same page
+  const dataContainer = document.createElement("div");
+  dataContainer.innerHTML = `
+    <p>Name: ${name}</p>
+    <p>Email: ${email}</p>
+    <p>Message: ${message}</p>
+  `;
+  document.body.appendChild(dataContainer);
+
+  form.reset;
+});
+
+</script>
+
+</body>
+</html>
+

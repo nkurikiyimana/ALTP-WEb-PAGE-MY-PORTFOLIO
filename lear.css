@@ -1,0 +1,46 @@
+*{
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  border: border-box;
+}
+html{
+  padding-left: 40rem;
+  margin-top: 2rem;
+  background-color: black;
+}
+hr{
+  word-wrap: wrap;
+}
+
+ul{
+  background-color: aqua;
+  width:fit-content;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  border-radius: 5%;
+  
+}
+.container{
+
+  border-radius: 16%;
+  border: solid rgb(253, 253, 253);
+  width: fit-content;
+  padding:1rem;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem;
+}
+.list, .list1, .list2, .list3, .list4, .list5{
+  font-size: 3rem;
+  list-style: none;
+  padding: 1rem;
+  align-items: center;
+}
+h1{
+  text-align: center;
+  color:rgb(255, 255, 253);
+  text-decoration: none;
+  text-transform: capitalize;
+}

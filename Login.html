@@ -5,49 +5,99 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login Page</title>
-  <script defer src="./login.js"></script>
 </head>
 <body>
-<section id="login">
-  <div class="login-container">
-    <h2>Login</h2><br><iconify-icon icon="ph:google-logo-fill"></iconify-icon>
-    <form id="login-form">
-      <iconify-icon icon="mdi-light:email"></iconify-icon>
-      
-      <input id="email" type="email" placeholder="Email" required /><br />
-      <iconify-icon icon="mdi:password-alert-outline"></iconify-icon>
+  <form id="login-form">
+    <h1> Hi There!</h1>
+    <h2>You need to Login before Add a  new blog</h2>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br>
+   <input type="submit" value="Submit">
+  </form>
+  <a href="admin.html"> <p>Go to Admin Pannel</p></a>
+<style>
+  p{
+    margin-left:34rem ;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  #login-form h1{
+    margin-left: 1rem;
+  }
+  #login-form h2{
+    color: blue;
+    font-weight: bold;
+    text-transform:capitalize ;
+  }
+#login-form {
+  border-radius: 10%;
+  padding: 4rem;
+  border: 2px solid #ccc;
+  margin-top: 10rem;
+  margin-left: 30rem;
+  width:fit-content;
+}
 
-   <input id="login-password" type="password" placeholder="Password" visible required/><br/>          
-      <a href="blogs.html">
-        <button class="btn loginbtn"  onclick="login()" >Login</button></a>
-      <p class="loginmsg">Forgot Password?</p>
-      
-    </form>
-  </div>
-  <div>
-    <a href="sinup.html">
-      <button class="btn loginbtn" type="onsubmit">Sin Up</button></a>
-  </div>
-</section>
+#login-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
 
+#login-form input[type="email"], #login-form input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+input[type="submit"]{
+padding: 1rem;
+border-radius: 30%;
+font-weight: bold;
+color: blue;
+font-size: 1.5rem;
+}
+</style> 
 
 <script>
-  function login() {
 
-var email = document.getElementById('email').value;
-var passward = document.getElementById('login-passward').value;
-console.log(email,login-passward);
+const form = document.getElementById("login-form");
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+});
 
-var email1= localStorage.getItem("email1");
-var pass1= localStorage.getItem("pass1");
-if(email==email1 && pass==pass1){
-  window.location.href="partfolio.html";
-}
-else{
-  alert(" email and pass is incorrect")
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  if (email === "" || password === "") {
+    alert("Please fill in both email and password fields.");
+  } else {
+    const previousEmail = localStorage.getItem("email");
+    const previousPassword = localStorage.getItem("password");
+  
+    if (previousEmail && previousPassword) {
+      localStorage.setItem("email2", email);
+      localStorage.setItem("password2", password);
+    } else {
+      localStorage.setItem("email", email);
+      localStorage.setItem("password", password);
+    }
+  }
 
-}
-}
+  const user = { email, password };
+  localStorage.setItem("user", JSON.stringify(user));
+  
+  // Clear the form
+  form.reset();
+  
+  // Show a message to the user
+  alert("logn successful!");
+});
+
 </script>
 
 </body>

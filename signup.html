@@ -12,59 +12,65 @@
 </head>
 <body>
   
-  <form role="form" onsubmit=signUp id="form">
-    <div class="container">
-      <h1 class="j">Sin Up</h1>
-      <p class="h"> Please fill in this form to create an account.</p>
-      <hr>
-
-<div class="form success" id="form">
-  <label for="fname"><b>Fname</b></label>
-    <input type="text" placeholder="Fname" name="name" id="fname" required>
-
-    <label for="lname"><b>Lname</b></label>
-    <input type="text" placeholder="Lname" name="lname" id="lname" required>
-
-<label for="email"><b>Email</b></label>
-    <input type="email" placeholder="email" name="email" id="email" required>
-
-    <iconify-icon icon="material-symbols:check-circle-rounded"></iconify-icon>
-<iconify-icon icon="clarity:exclamation-circle-solid"></iconify-icon>
-<small>error message</small><br>
-</div>
-
-<div class="form error">
-    <label for="password"><b>Password</b></label>
-    <input type="password" placeholder=" Password" name="psw" id="pwd" required>
-
-    <iconify-icon icon="material-symbols:check-circle-rounded"></iconify-icon>
-<iconify-icon icon="clarity:exclamation-circle-solid"></iconify-icon>
-<small>error message</small>
-<br>
-</div>
-
-<div class="form">
-    <label for="psw-repeat"><b>Comferm Password</b></label>
-    <input type="password" placeholder="comferm Password" name="psw-repeat"  id= "pwd1" required>
-
-    <iconify-icon icon="material-symbols:check-circle-rounded"></iconify-icon>
-<iconify-icon icon="clarity:exclamation-circle-solid"></iconify-icon>
-<small>error message</small><label>
-</div>
-
-      <input type="checkbox" checked="checked" name="remember" class="k"> Remember me  </label>
-
-    <p class="t">By creating an account you agree to our <a href="term.html" style="color:dodgerblue">Terms & Privacy</a>.</p>
-
-    <div class="clearfix">
-      <button type="button" class="cancelbtn">Cancel</button>
-      <button type="submit" id="signupbtn" class="signupbtn">Sign Up</button>
-  </div>
-  </form>
-  <h2>MY INFO</h2>
-  <div id="output">
+  <div class="form">
+  <form>
+    <label for="fname">First Name:</label>
+    <input type="text" id="fname" name="firstname" required>
+  
+    <label for="lname">Last Name:</label>
+    <input type="text" id="lname" name="lastname" required>
     
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    
+    <label for="confirm">Confirm Password:</label>
+    <input type="password" id="confirm" name="confirm" required>
+
+    <input type="checkbox" checked="checked" name="remember" class="k"> Remember me  </label>
+
+    <p class="t">By creating an account you agree to our <a href="term.html" style="color:rgb(71, 22, 206)">Terms & Privacy</a>.</p>
+
+    
+    <input type="submit" value="Submit"><hr>
+  
+      
+  </form>
   </div>
+  <script>
+
+const form = document.querySelector("form");
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+  // Get the form data
+  const fname = document.querySelector("#fname").value;
+  const lname = document.querySelector("#lname").value;
+  const email = document.querySelector("#email").value;
+  const password = document.querySelector("#password").value;
+  const confirm = document.querySelector("#confirm").value;
+  
+  // Form validation
+  if (password !== confirm) {
+    alert("Passwords do not match");
+    return;
+  }
+  
+  // Store the data to local storage
+  const user = { fname, lname, email, password };
+  localStorage.setItem("user", JSON.stringify(user));
+  
+  // Clear the form
+  form.reset();
+  
+  // Show a message to the user
+  alert("Signup successful!");
+});
+
+
+  </script>
+  
   <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
 
   
@@ -84,33 +90,17 @@
     min-height: 100vh;
     margin: 0;
     background-color: #fbfcfc;
+    background-image:url(../images/sinn.jpg);
   }
 
   
-  .container{
+  .form{
     margin: 1.3em;
     background-image:url(../images/sinn.jpg);
     
 
   }
-  .h{
-    color:rgb(2, 24, 26);
-    font-size: 2rem;
-  font-weight: bold;
-  }
-  .j{
-    font-size: 3.5rem;
-    text-transform: capitalize;
-    color: rgb(70, 20, 151);
-    font-weight: bold;
-
-  }
-  .t{
-    font-size: 2rem;
-  }
-  b{
-    font-size: 2rem;
-  }
+  
   
 
   
@@ -137,6 +127,19 @@ input[type=email] {
   background: white;
   border: solid rgb(156, 204, 207);
   font-size: 1.7rem;
+}
+
+input[type=submit] {
+  width: 1%;
+  padding: .3rem;
+  margin: 2px 0 1px 0;
+  width:fit-content;
+  display:flex;
+  border: none;
+  background: white;
+  border: solid rgb(156, 204, 207);
+  font-size: 1.7rem;
+  border-radius: 3rem;
 }
 
 input[type=text]:focus, input[type=password]:focus {
@@ -172,70 +175,12 @@ button {
  
 }
 
-button:hover {
-  opacity:1;
-  color: rgb(0, 217, 255);
-  text-shadow: #04AA6D;
-}
-
-/* Extra styles for the cancel button */
-.cancelbtn {
-  padding: 8px 2px;
-  background-color: #07065c;
- 
-}
-
-/* Float cancel and signup buttons and add an equal width */
-.cancelbtn, .signupbtn {
-  float: right;
-  width: 30%;
-  padding-right: 1rem;;
-}
-
-/* Add padding to container elements */
-.container {
-  padding: 16px;
-}
-
-/* Clear floats */
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.form iconify-icon{
-  display: absolute;
- top:40rem;
-right: 10px;
-visibility: hidden;
-}
-small{
-  visibility: hidden;
-}
-
-.form .success input{
-  border: 2px solid green ;
-}
-.form .error input{
-  border:  2px solid red ;
-}
-
-  .form .check-circle-rounded{
-visibility: visible;
-color:#07065c
-  }
-
-  .form .exclamation-circle-solid{
-visibility: visible;
-color:#04AA6D
-  }
 
 
 
 /* Change styles for cancel button and signup button on extra small screens */
 @media screen and (max-width: 300px) {
-  .cancelbtn, .signupbtn {
+  form {
     width: 100%;
   }
 }

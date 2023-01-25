@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>blog-list</title>
+</head>
+<body>
+  <div id="blog-list"> </div>
+  <script>
+
+    //Retrieving the blogs from local storage
+let blogs = JSON.parse(localStorage.getItem("blogs"));
+
+//Selecting the blog list container
+const blogList = document.getElementById("blog-list");
+
+//looping through the blogs and creating elements to display the blog
+for(let i = 0; i < blogs.length; i++) {
+  let title = document.createElement("h3");
+  let image = document.createElement("img");
+  let description = document.createElement("p");
+  
+  title.innerHTML = blogs[i].title;
+  image.src = blogs[i].image;
+  description.innerHTML = blogs[i].description;
+  
+  blogList.appendChild(title);
+  blogList.appendChild(image);
+  blogList.appendChild(description);
+}
+
+  </script>
+  
+  <style>
+    .blog-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.blog-item {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img {
+  width: 100%;
+  max-width: 200px;
+  margin-bottom: 20px;
+}
+  </style>
+</body>
+</html>

@@ -4,15 +4,37 @@
 <head>
   <title>Local Storage Example</title>
 </head>
-<body>
-  <form>
+<>
+  <form id="d">
     <label>Enter a value to save:</label>
     <input type="text" id="inputValue">
-    <button type="button" onclick="saveValue()">Save</button>
+    <button type="button" class="f" onclick="saveValue()">Save</button>
   </form>
   <br>
   <button type="button" onclick="retrieveValue()">Retrieve Saved Value</button>
   <p id="output"></p>
+</form>
+  <style>
+form{
+  padding-top: 6rem;
+  padding:2rem;
+ 
+}
+body{
+  background-color: aqua;
+  font-size: 3rem;
+}
+
+label{
+  font-size: 2rem;
+  padding: 5rem;
+}
+button{
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-left: 4rem;
+}
+  </style>
 
   <script>
     function saveValue() {

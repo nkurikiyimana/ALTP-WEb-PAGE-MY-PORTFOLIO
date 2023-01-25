@@ -31,11 +31,11 @@
       </div>
     </nav>
 
-<img src="images/me.jpg" alt="Faustion">
+<img src="images/me.jpg" alt="Faustin">
       <section class="home" id="home">
         <div class="hom">
-        <h3>HI THERE !</h3>
-        <h1>I'AM <span>Faustin Nkuru</span></h1>
+        <h1><span>HI</span> THERE <span>!</span></h1>
+        <h2>I'AM <span>Faustin Nkuru</span></h2>
         <p>
           We are hardworking and always seeking outside the box. Unafraid to
           tackle new challenges and known for accomplishing objectives and
@@ -44,7 +44,7 @@
 
         <a href="#about"
           ><button class="btn">
-            about me
+            About me </button>
             <iconify-icon icon="mdi:user-circle"></iconify-icon></button
         ></a>
       </div>
@@ -139,7 +139,7 @@
     </section>
 
     <section class="skills" id="skills">
-      <h1>Your task is our priority</h1>
+      <h1>we are there for your tasks </h1>
       <div class="box-container">
         <div class="box">
           <img src="./Images/html.jpg" alt="image" />
@@ -183,14 +183,15 @@
       </div>
     </section>
 
-    <section class="contact" id="contact">
+    <section class="contact" id="contact"><hr>
       <div class="my-info">
+       
         <div class="name"><span>Nkuru Faustin</span></div>
         <div class="phone">
           <iconify-icon
             icon="material-symbols:perm-phone-msg-outline"
-            width="99px"
-            height="99px"
+            width="40px"
+            height="40px"
           ></iconify-icon
           ><span>+250 783715420</span>
         </div>
@@ -201,8 +202,8 @@
         >
           <iconify-icon
             icon="mdi:github"
-            width="99px"
-            height="99px"
+            width="40px"
+            height="40px"
           ></iconify-icon
           ><span>Github</span>
         </a>
@@ -213,41 +214,70 @@
         >
           <iconify-icon
             icon="mdi:linkedin"
-            width="99px"
-            height="99px"
+            width="40px"
+            height="40px"
           ></iconify-icon
           ><span>linkedin</span>
         </a>
         <div class="email">
           <iconify-icon
             icon="ic:round-email"
-            width="99px"
-            height="99px"
+            width="40px"
+            height="40px"
           ></iconify-icon
           ><span>nkuru@gmail.com</span>
         </div>
         <div class="location">
           <iconify-icon
             icon="material-symbols:location-on"
-            width="99px"
-            height="99px"
+            width="40px"
+            height="40px"
           ></iconify-icon
           ><span>Gasabo/Kigali/Rwanda</span>
         </div>
       </div>
-      <form class="message-container">
-        <input type="text" placeholder="Name:" name="name" />
-        <input type="text" placeholder="Email:" name="email" /><input
-          type="text"
-          placeholder="Project Name:"
-          name="project"
-        /><input type="text" placeholder="Message:" name="message" />
-
-        <button class="btn">
-          send<iconify-icon icon="material-symbols:send"></iconify-icon>
-        </button>
+     
+      
+      
+      <form id="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message"></textarea><br>
+        <input type="submit" value="Submit">
       </form>
     </section>
+    
+    <script>
+
+      const form = document.getElementById("contact-form");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+        
+        // Store data in local storage
+        localStorage.setItem("name", name);
+        localStorage.setItem("email", email);
+        localStorage.setItem("message", message);
+      
+        // Show data on the same page
+        const dataContainer = document.createElement("div");
+        dataContainer.innerHTML = `
+          <p>Name: ${name}</p>
+          <p>Email: ${email}</p>
+          <p>Message: ${message}</p>
+        `;
+        document.body.appendChild(dataContainer);
+      
+        form.reset;
+      });
+      
+      </script>
+
 
     <section class="blogs" id="blogs">
       <div class="blog">
@@ -260,7 +290,7 @@
             dapibus ut pellentesque a, condimentum sit amet quam. In sed
             efficitur nulla.
           </p>
-          <a href="blogs.html"><button class="rd" >Read More...</button>
+          <a href="blogs.html"><h3 class="rd" >Read More...</h3>
           </a>
         </div>
       </div>
@@ -273,7 +303,7 @@
             ultricies semper finibus. Duis et tristique purus. Fusce mi dolor,
             dapibus ueget metus in urna ultrices iaculis eget in metus.
           </p>
-          <a href="blogs.html"><button class="rd" >Read More...</button>
+          <a href="blogs.html"><h3 class="rd" >Read More...</h3>
           </a>
         </div>
       </div>
@@ -286,7 +316,7 @@
             ultricies semper finibus. Duis et tristique purus. Fusce mi dolor,
             dapibus ut felis. Duis porta nunc vitae metus mollis scelerisque.
           </p>
-          <a href="blogs.html"><a href="blogs.html"><button class="rd" >Read More...</button>
+          <a href="blogs.html"><h3 class="rd" >Read More...</h3>
           </a>
         </div>
       </div>
@@ -299,65 +329,27 @@
             ultricies semper finibus. Duis et tristique purus. Fusce mi dolor,
             dapibus ut Duis porta nunc vitae metus mollis scelerisque.
           </p>
-          <a href="blogs.html"><a href="blogs.html"><button class="rd" >Read More...</button>
+          <a href="blogs.html"><h3 class="rd" >Read More...</h3>
           </a>
         </div>
       </div>
     </section>
-    <section id="login">
-      <div class="login-container">
-        <h2>Login</h2><br><iconify-icon icon="ph:google-logo-fill"></iconify-icon>
-        <form onsubmit="return validateLogin()">
-          <iconify-icon icon="mdi-light:email"></iconify-icon>
-          
-          <input id="email" type="email" placeholder="Email" required /><br />
-          <iconify-icon icon="mdi:password-alert-outline"></iconify-icon>
-
-       <input id="login-password" type="password" placeholder="Password" visible required/><br/>          
-      
-            <button class="loginbtn" type="onsubmit">Log In</button>
-          <p class="loginmsg">Forgot Password?</p>
-          
-        </form>
-        <script>
-          
-  var username = document.getElementById("email").value;
-  var password = document.getElementById("login-passward").value;
-  function validateLogin() {
-  if (username.length < 9) {
-    alert("Username must be at least 3 characters long");
-    return false;
-  }
-
-  if (passward.length < 6) {
-    alert("Password must be at least 6 characters long");
-    return false;
-  }
-  return true;
-}
-
-var data = localStorage.getItem('validatelogin','username.value');
-  
-
-   function validateLogin() {
-      // Get the value from the input field
-      var inputValue = document.getElementById("email").value;
-
-      // Save the value to local storage
-      localStorage.setItem("validateLogin()", inputValue);
-      localStorage.setItem("validateLogin()",passward);
-    }
-
+<div id="login">
+    <form id="login-form">
+      <h1> Log in</h1>
+     
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required><br>
+     <input type="submit" value="Submit">
     
-        </script>
-      </div>
-      <div>
-        <a href="sinup.html">
-          <button class="btn loginbtn" type="onsubmit">Sin Up</button></a>
-      </div>
-    </section>
-
-
+      <p class="loginmsg">Don't have an Account?</p>
+    
+    <a href="signup.html"> <button class="btn-loginbtn" type="onsubmit">Sign Up</button></a>
+  </form>
+</div>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
     
