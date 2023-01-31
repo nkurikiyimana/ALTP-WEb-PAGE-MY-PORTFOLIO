@@ -11,35 +11,78 @@
   <script>src="../signUp.js"</script>
 </head>
 <body>
-  
+  <div class="container">
   <div class="form">
+    <h2>Sign Up</h2>
+    <div class="icon">
+      <a href="https://github.com/nkurikiyimana/nkurikiyimana"><iconify-icon icon="carbon:logo-github"></iconify-icon></a>
+      <a href="https://web.facebook.com/?_rdc=1&_rdr"><iconify-icon icon="bi:facebook"></iconify-icon> </a>
+      <a href="https://twitter.com/MeteoRwanda?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"> <iconify-icon icon="ant-design:twitter-circle-filled"></iconify-icon></a>
+     </div>
+
   <form>
-    <label for="fname">First Name:</label>
-    <input type="text" id="fname" name="firstname" required>
+    <input type="text" id="fname" name="firstname"  placeholder="First Name"required >
+   
   
-    <label for="lname">Last Name:</label>
-    <input type="text" id="lname" name="lastname" required>
+    <input type="text" id="lname" name="lastname" placeholder="Last Name" required>
     
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
+    <input type="email" id="email" name="email" placeholder="Email" required>
     
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
+    <input type="password" id="password" name="password" placeholder="Password" required>
     
-    <label for="confirm">Confirm Password:</label>
-    <input type="password" id="confirm" name="confirm" required>
+    <input type="password" id="confirm" name="confirm" placeholder="Confirm Password" required>
 
-    <input type="checkbox" checked="checked" name="remember" class="k"> Remember me  </label>
+    <input type="checkbox" checked="checked" name="remember" <b class="k"> Remember me </b>
 
-    <p class="t">By creating an account you agree to our <a href="term.html" style="color:rgb(71, 22, 206)">Terms & Privacy</a>.</p>
+      <a href="term.html" style="color:rgb(46, 46, 211)">Reader and Agree Terms & Privacy.</a></p>
 
     
-    <input type="submit" value="Submit"><hr>
-  
-      
+    <a href="portfolio.html"> <input type="submit" id="sign" value="Submit"></a>
+     
+ <p class="here"> Alread registered Log in  <a class="here"href="Login.html">Here!</a></p>
   </form>
+  
   </div>
+</div>
+
+
+  <div id="notification">
+    <p id="notification-message"></p>
+  </div>
+  
+  
+    <style>
+      #notification{
+        background-color: blue;
+        width: fit-content;
+        display: block;
+        margin-left: 70rem;
+        float: top;
+
+      }
+  #notification-message{
+    font-size: 1.3rem;
+    color: white;
+        } 
+        
+      </style>
+  
+  
+  
+  
+
+
+
   <script>
+
+function showNotification(message) {
+  var notification = document.getElementById("notification");
+  var notificationMessage = document.getElementById("notification-message");
+  notificationMessage.innerHTML = message;
+  setTimeout(function() {
+    notification.style.display = "flex";
+  }, 3000);
+}
 
 const form = document.querySelector("form");
 form.addEventListener("submit", function(event) {
@@ -53,7 +96,7 @@ form.addEventListener("submit", function(event) {
   
   // Form validation
   if (password !== confirm) {
-    alert("Passwords do not match");
+    showNotification("Passwords do not match")
     return;
   }
   
@@ -65,7 +108,8 @@ form.addEventListener("submit", function(event) {
   form.reset();
   
   // Show a message to the user
-  alert("Signup successful!");
+  showNotification("Signup successful!");
+  window.location.href='./portfolio.html';
 });
 
 
@@ -80,101 +124,109 @@ form.addEventListener("submit", function(event) {
   *{
     margin:0;
     padding:0;
-    background-image:rgb(111, 111, 247);
-  }
-
-  body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    margin: 0;
-    background-color: #fbfcfc;
-    background-image:url(../images/sinn.jpg);
+   border: border-box;
   }
 
   
-  .form{
-    margin: 1.3em;
-    background-image:url(../images/sinn.jpg);
+  .container{
+    background-image:url(./images/sky.jpg);
+    display:flex;
+    padding: 2rem;
+    background-size: cover;
+  }
+  .icon{
+  display:flex;
+  margin-left: 4rem;
+  padding: .5rem;
+  gap:4rem;
+  font-size: 2rem;
+}
+
+.icon:hover{
+  color:#fff;
+  opacity: 70%;
+}
+
+
+  .form{ 
+    margin-left: 35rem;
+  }
+
+  .form p{
+   padding: 1rem;
+   color:rgb(8, 8, 8)
+  }
+.k{
+color: #fff;
+}
+  .here{
+    text-align: center;
+    color:rgb(61, 21, 236)
+  }
+
+  .form h2{
     
-
+    text-align: center;
+    padding: 2rem;
+    font-size: 3rem;
+    color:blue
+   
   }
-  
-  
 
-  
   /* Full-width input fields */
 input[type=text], input[type=password] {
-  width: 1%;
-  padding: .3rem;
   margin: 2px 0 1px 0;
   width:fit-content;
   display:flex;
   border: none;
-  background: white;
-  border: solid rgb(156, 204, 207);
-  font-size: 1.7rem;
+  border: solid rgb(10, 12, 12);
+  font-size: 1.0rem;
+  width:100%;
+  text-align: center;
+  padding: .7rem;
+  margin:1.2rem;
+  border-radius: .5rem;
 }
 
 input[type=email] {
-  width: 1%;
-  padding: .3rem;
+  text-align: center;
   margin: 2px 0 1px 0;
-  width:fit-content;
   display:flex;
   border: none;
-  background: white;
-  border: solid rgb(156, 204, 207);
-  font-size: 1.7rem;
+  border: solid rgb(10, 12, 12);
+  font-size: 1.0rem;
+  margin:1.2rem;
+  width:100%
+
 }
 
-input[type=submit] {
-  width: 1%;
-  padding: .3rem;
-  margin: 2px 0 1px 0;
-  width:fit-content;
-  display:flex;
-  border: none;
-  background: white;
-  border: solid rgb(156, 204, 207);
-  font-size: 1.7rem;
-  border-radius: 3rem;
+input[type=email] {
+  padding: .7rem;
+  border-radius: .5rem;
 }
+
+
 
 input[type=text]:focus, input[type=password]:focus {
-  background-color: rgb(253, 252, 252);
+ 
   outline: none;
-  width:fit-content;
 }
 
 input[type=email]:focus {
-  background-color: rgb(253, 252, 252);
+  
   outline: none;
-  width:fit-content;
 }
 
-hr {
-  border: 6px solid #4275c2;
-  margin-bottom: 40px;
-  width: 65%;
+input[type=submit]{
+  margin-left:1rem;
+  background-color:blue;
+  color: #fff;
+  padding: .2rem;
+  border-radius:4rem;
+  width:100%
+
+  
 }
-
-
-/* Set a style for all buttons */
-button {
-  background-color: #4e32b4;
-  color: white;
-  padding: 8px 2px;
-  margin: 2px 0;
-  border: none;
-  cursor: pointer;
-  width: 1%;
-  opacity: 0.9;
-  font-size: 2rem;
- 
-}
-
 
 
 
@@ -187,4 +239,6 @@ button {
 
 </style>
 
+<script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+</body>
 </html>

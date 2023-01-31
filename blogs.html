@@ -128,7 +128,7 @@ window.onload = updateLikeCount;
 
 
   
-  
+  <div id="mycontainer">
     <form id="comment-form">
       <label for="name">Name:</label>
       <input type="text" id="name" name="name">
@@ -136,6 +136,9 @@ window.onload = updateLikeCount;
       <textarea id="comment" name="comment"></textarea>
       <input type="button" value="Save Comment" class="t" onclick="saveComment()">
     </form>
+
+  </div>
+    
     
       
 <script>
@@ -156,14 +159,85 @@ window.onload = function() {
   if (name && comment) {
     let storedComment = document.createElement("p");
     storedComment.innerHTML = `<strong>${name}</strong> says: ${comment}`;
-    document.body.appendChild(storedComment);
+    document.getElementById('mycontainer').appendChild(storedComment);
   }
 }
 
 </script>
-
+<style>
+  #mycontainer{
+color:rgb(5, 5, 177);
+display: flex;
+flex-direction: column;
+  }
+</style>
 <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
   <script src="blogs.js"></script>
+
+
+
+  <div id="blog-list">
+    <div id="like-section">
+      <label for="like">likes</label> 
+      <iconify-icon icon="ant-design:like-outlined"></iconify-icon>
+       <button id="yes-button" onclick="incrementLikes('yes')">Yes</button>
+       <iconify-icon icon="mdi:dislike-outline"></iconify-icon>
+       <button id="no-button" onclick="incrementLikes('no')">No</button>
+        <p id="like-count"></p>
+      </div>
+  </div>
+  <a href="./blogs.html"><b>Read more...</b></a>
+  <style>
+    #blog-list{
+      display:flex;
+      align-items: center;
+      background-image: url(./Images/sky.jpg);
+      background-size: cover;
+      width: fit-content;
+      font-size: 2rem;
+      margin-left: 15rem;
+  
+      padding: 2rem;
+    }
+  </style>
+  
+  <script>
+   // Get blog list from local storage
+  let blogList = JSON.parse(localStorage.getItem("blogList")) || [];
+  
+  // Get blog list container
+  const blogListContainer = document.getElementById("blog-list");
+  
+  // Loop through blog list and create elements for each blog
+  blogList.forEach((blog) => {
+    const blogItem = document.createElement("div");
+    blogItem.classList.add("blog-item");
+  
+    const blogTitle = document.createElement("h2");
+    blogTitle.innerText = blog.title;
+  
+    const blogDate = document.createElement("p");
+    blogDate.innerText = blog.date;
+  
+    const blogImage = document.createElement("img");
+    blogImage.src = blog.image;
+  
+    const blogDesc = document.createElement("p");
+    blogDesc.innerText = blog.desc;
+  
+    blogItem.appendChild(blogTitle);
+    blogItem.appendChild(blogDate);
+    blogItem.appendChild(blogImage);
+    blogItem.appendChild(blogDesc);
+  
+    blogListContainer.appendChild(blogItem);
+  });
+  
+  
+  
+  // Get blog list from local storage
+  let blogListt = JSON.parse(localStorage.getItem("blogList")) || [];
+  </script>
 </body>
 
 </html>

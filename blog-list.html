@@ -4,55 +4,148 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>blog-list</title>
+  <title>Blog-list</title>
 </head>
 <body>
-  <div id="blog-list"> </div>
-  <script>
 
-    //Retrieving the blogs from local storage
-let blogs = JSON.parse(localStorage.getItem("blogs"));
 
-//Selecting the blog list container
-const blogList = document.getElementById("blog-list");
+<div id="blog-list">
+</div>
+<style>
+  #blog-list{
+    display:flex;
+    align-items: center;
+    background-image: url(./Images/sky.jpg);
+    background-size: cover;
+    width: fit-content;
+    font-size: 2rem;
+    margin-left: 15rem;
 
-//looping through the blogs and creating elements to display the blog
-for(let i = 0; i < blogs.length; i++) {
-  let title = document.createElement("h3");
-  let image = document.createElement("img");
-  let description = document.createElement("p");
-  
-  title.innerHTML = blogs[i].title;
-  image.src = blogs[i].image;
-  description.innerHTML = blogs[i].description;
-  
-  blogList.appendChild(title);
-  blogList.appendChild(image);
-  blogList.appendChild(description);
-}
+    padding: 2rem;
+  }
+</style>
 
-  </script>
-  
-  <style>
-    .blog-list {
-  display: flex;
-  flex-wrap: wrap;
-}
+<script>
+ // Get blog list from local storage
+let blogList = JSON.parse(localStorage.getItem("blogList")) || [];
 
-.blog-item {
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+// Get blog list container
+const blogListContainer = document.getElementById("blog-list");
 
-img {
-  width: 100%;
-  max-width: 200px;
-  margin-bottom: 20px;
-}
-  </style>
+// Loop through blog list and create elements for each blog
+blogList.forEach((blog) => {
+  const blogItem = document.createElement("div");
+  blogItem.classList.add("blog-item");
+
+  const blogTitle = document.createElement("h2");
+  blogTitle.innerText = blog.title;
+
+  const blogDate = document.createElement("p");
+  blogDate.innerText = blog.date;
+
+  const blogImage = document.createElement("img");
+  blogImage.src = blog.image;
+
+  const blogDesc = document.createElement("p");
+  blogDesc.innerText = blog.desc;
+
+  blogItem.appendChild(blogTitle);
+  blogItem.appendChild(blogDate);
+  blogItem.appendChild(blogImage);
+  blogItem.appendChild(blogDesc);
+
+  blogListContainer.appendChild(blogItem);
+});
+
+
+
+// Get blog list from local storage
+let blogListt = JSON.parse(localStorage.getItem("blogList")) || [];
+
+// Get blog list container
+const blogLisstContainer = document.getElementById("blog-list");
+
+// Loop through blog list and create elements for each blog
+blogListt.forEach((blog, index) => {
+  const blogItem = document.createElement("div");
+  blogItem.classListt.add("blog-item");
+
+  // Create title element
+  const blogTitle = document.createElement("h2");
+  blogTitle.innerText = blog.title;
+
+  // Create date element
+  const blogDate = document.createElement("p");
+  blogDate.innerText = blog.date;
+
+  // Create image element
+  const blogImage = document.createElement("img");
+  blogImage.src = blog.image;
+
+  // Create description element
+  const blogDesc = document.createElement("p");
+  blogDesc.innerText = blog.desc;
+
+  // Create edit button
+  const editButton = document.createElement("button");
+  editButton.innerText = "Edit";
+  editButton.addEventListener("click", () => {
+    // Open edit form and pre-populate with current blog data
+    openEditForm(index);
+  });
+
+  // Create delete button
+  const deleteButton = document.createElement("button");
+  deleteButton.innerText = "Delete";
+  deleteButton.addEventListener("click", () => {
+    // Remove blog from list and update local storage
+    deleteBlog(index);
+  });
+
+  blogItem.appendChild(blogTitle);
+  blogItem.appendChild(blogDate);
+  blogItem.appendChild(blogImage);
+  blogItem.appendChild(blogDesc);
+  blogItem.appendChild(editButton);
+  blogItem.appendChild(deleteButton);
+
+  blogListContainer.appendChild(blogItem);
+});
+
+// Function to open edit form and pre-populate with current blog data
+function openEditForm(index) {
+  // Get current blog data
+  const currentBlog = blogList[index];
+
+  // Get form elements
+  const editForm = document.getElementById("edit-form");
+  const editTitleInput = document.getElementById("edit-title");
+  const editDateInput = document.getElementById("edit-date");
+  const editImageInput = document.getElementById("edit-image");
+  const editDescInput = document.getElementById("edit-description");
+
+  // Pre-populate form with current blog data
+  editTitleInput.value = currentBlog.title;
+  editDateInput.value = currentBlog.date;
+  editImageInput.value = currentBlog.image;
+  editDescInput.value = currentBlog.desc;
+
+  // Show form
+  editForm.style.display = "block";
+
+  // Handle form submission
+  editForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    // Get form data
+    const title = editTitleInput.value;
+    const date = editDateInput.value;
+    const image = editImageInput.value;
+    const desc = editDescInput.value;
+  })}
+   
+
+
+</script>
 </body>
 </html>

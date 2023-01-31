@@ -1,137 +1,32 @@
-
-    
-*{
-padding: 0.7px;
-margin: 0px;
-box-sizing: border-box;
-}
-
-nav{
-font-size: 2rem;
-padding-left: 4rem;
-}
-nav p{
-font-size: 2rem;
-color: blue; 
-}
-#logoutbtn{
-padding:.9rem;
-font-size: 1.2rem;
-font-weight: bold;
-border-radius: 10%;
-}
-img{
-width:170px
-}
-body{
-background-color:white;
-color: #8dd1e6;  
-font-family: 'Roboto'; 
-overflow-x: hidden;
-}
-.admin-title{
-color:green;
-padding:2rem;
-}
-
-#blog{
-padding:0rem;
-margin: 2rem;
-font-size: 3rem;
-}
-
-.blogs-part{
-padding: 1rem;
-display:inline-flex;
-justify-content: space-evenly;
-align-items: center;
-gap:.7rem;
-font-size: 1.7rem;
-color:aqua;
-
-}
-#add-post{
-    color: rgb(161, 208, 226);
-    font-size:1.7rem;
-    position: relative;;
-    justify-content: center;
-    padding-left: 5rem;
-    padding-right: 2rem;
-}
-
-#add-post h2{
-    color: rgb(180, 218, 93);
-    font-size:3rem;
-    position: relative;
-    display: flex;
-    justify-content: center;
-}
-
-
-#labels{
-    padding-left: 2rem;
-    font-size:2rem
-}
-
-#topic,
-#title{
-    background-color: rgb(254, 255, 254);
-    border: 0px;
-    position: relative;
-    padding: .3rem;
-    border: solid black 1px;
-    
-}
-#post{
-    height: 50px;
-    background-color: #D9D9D9;
-}
-#blog-image-btn{
+form {
+    width: 500px;
+    margin: 0 auto;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"], textarea {
     width: 100%;
-    height: 40px;
-    font-size: 3rem;
-    position: relative;
-    margin-top: 10px;
-    border-radius: 5px;
-    border: 0px;
-}
-#postbtn{
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+  input[type="date"] {
     width: 100%;
-    height: 70px;
-    font-size: 25px;
-    position: relative;
-    margin-top: 10px;
-    border-radius: 5px;
-    border: 0px;
-}
-#queries-socials{
-    padding: 1rem;
-display:inline-flex;
-justify-content: space-evenly;
-align-items: center;
-gap:1rem;
-font-size: 1.7rem;
-color:aqua;
-}
-#queries-socials h2, h4{
-    font-size: 1.5rem;
-    color:blue;
-}
-.media-container img{
-    width:30px
-}
-
-@media only screen and (max-width: 425px){
-#navbar{
-  display: none;
-}
-}
-@media only screen and (max-width: 360px){
-body{
-   width: 150px; 
-}
-queries-socials{
-   width: 50%;
-}
-}
-
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+  
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+  }
+  
