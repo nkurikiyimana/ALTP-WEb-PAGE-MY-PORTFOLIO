@@ -23,7 +23,7 @@ input{
 
 
 html {
-  font-size: 20px;
+  font-size: 15px;
   overflow-x: hidden;
   padding: 1rem;
 }
@@ -33,7 +33,7 @@ body {
   background: rgb(161, 227, 231);
   overflow-x: hidden;
   padding: 1rem;
-  padding-top: 1rem;
+ 
 }
 
 #home{
@@ -41,7 +41,7 @@ body {
 }
 
 div span{
-  color:rgb(0, 21, 209)
+  color:rgb(4, 6, 15)
   
 }
 div p{
@@ -64,10 +64,11 @@ img{
 
 a  .s1, .s1, .s2, .s3, .s4, .s5{
  color:rgb(32, 194, 243);
- font-size: 1rem;
+ font-size: 1.4rem;
  color:rgb(53, 19, 175);
  background-color: aqua;
  border-radius: 10%;
+ margin-left: 8rem;
 
 }
 a{
@@ -83,16 +84,13 @@ a{
   
 }
 
- h2{
-  margin: 1rem;
-  color:blue
-}
+
 
 
 
 input {
   font-size: .5rem;
-  color: rgb(73, 179, 206);
+  color: rgb(0, 12, 15);
   padding: 1rem;
   width: fit-content;
   margin: auto;
@@ -102,18 +100,19 @@ input {
 
 textarea{
 font-size: 1.5rem;
-  color: rgb(73, 179, 206);
+  color: rgb(1, 17, 20);
   padding: 1rem;
   width: fit-content;
   margin: auto;
-  border-radius: 1rem;
+  border-radius: .1rem;
   text-align: center;}
 
 .t{
   
-  border-radius: 1rem;
+  border-radius: 3rem;
   text-align: center;
   float:right;
+  color: black;
 
 }
 span{
@@ -141,29 +140,33 @@ span{
   
 
 }
-button{
-  border-radius: 3rem;
+#name{
+  border-radius: .1rem;
   font-size: 1rem;
   font-weight: bold;
 }
 button:hover{
- color:aquamarine;
+ color:rgb(255, 127, 127);
 }
+.t:hover{
+  background-color: blue;
+  color:rgb(253, 252, 252);
+ }
 
-#like-section {
+#like-sectio {
   text-align: center;
 }
 
-#like-section button {
+#like-sectio button {
   padding: 10px 20px;
   margin: 10px;
   font-size: 18px;
   cursor: pointer;
 }
 
-#like-section #like-count {
-  font-size: 18px;
-  margin: 10px;
+#like-sectio #like-count {
+  font-size: 15px;
+  margin: 5px;
 }
 
 label{

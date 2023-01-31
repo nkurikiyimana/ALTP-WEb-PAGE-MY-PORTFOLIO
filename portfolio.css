@@ -1433,9 +1433,8 @@ input[type="submit"]:hover {
 }
 
 .blogs {
-  font-size: 1.2rem;
- 
-  color: white;
+  font-size: 2rem;
+  color: rgb(14, 13, 13);
   display: flex;
   background-image:url(./Images/sky.jpg);
   background-size: cover;
@@ -1446,11 +1445,12 @@ input[type="submit"]:hover {
 
 .blogs img {
 
-  width: 50%;
+  width: 100%;
   height: 10rem;
   align-items: center;
-  margin-left: 14rem;
+  margin-left: 5rem;
   align-content: center;
+  margin-right: 1rem;
 }
 .blogs h2 {
   text-align: center;
@@ -1460,7 +1460,7 @@ button{
 }
 .rd{
   text-align: center;
-  padding-top: 1rem;
+  padding-top: .7rem;
   color: blue;
 }
 
@@ -1471,7 +1471,12 @@ button{
   
 }
 .blogs{
-  padding: 20rem;
+  padding: 14rem;
+}
+
+.bgimg{
+align-items: center;
+width: 100%;
 }
 #login{
   background-image: url(./Images/sky.jpg);
@@ -1493,7 +1498,7 @@ button{
   padding: 4rem;
   border: 2px solid #ccc;
   margin-top: 10rem;
-  margin: 3rem;
+  margin-left: 25rem;
   width:fit-content;
 }
 

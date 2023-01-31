@@ -21,9 +21,10 @@
       </nav>
     </header>
   </section>
+  <div> <a href="./admin.html"><button class="nwe-post">Add New-Post</button></div></a>
   <section class="menu">
     <div class="items">
-      <li><i class="fa-solid fa-message-smile"></i>  <a href="message">Message</a></li>
+      <i class="fa-solid fa-message"></i> <a href="message">Message</a>
       <li><i class="fa-solid fa-user"></i> <a href="user">User</a></li>
       <li><i class="fa-sharp fa-solid fa-blog"></i><a href="blogs">blog</a></li>
       <li><i class="fa-sharp fa-solid fa-comments"></i> <a href="Comment">Comment</a></li>
@@ -32,28 +33,78 @@
   </div>
   </section>
  
-  <div> <button class="nwe-post">Add New-Post</button></div>
+
   <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
 
 </body>
 <footer>
+  <div class="footer"> 
+    4<iconify-icon icon="akar-icons:facebook-fill"></iconify-icon><b>Musabwa Fanny</b><br>
+    5<iconify-icon icon="icon-park:instagram-one"></iconify-icon><b>Musemakweli Ketty</b><br>
+    8<iconify-icon icon="icon-park:twitter"></iconify-icon><b>Kasso</b><br
+    10<iconify-icon icon="uiw:github"></iconify-icon><b>@kevin</b>
+  </div>
+   <div>
+    <a href="index.html"<button>Connect to Us</button> </a>
+  </div>
   
-  <div class="icon">
-    <a href="https://github.com/nkurikiyimana/nkurikiyimana"><iconify-icon icon="carbon:logo-github"></iconify-icon></a>
-    <a href="https://web.facebook.com/?_rdc=1&_rdr"><iconify-icon icon="bi:facebook"></iconify-icon> </a>
-    <a href="https://twitter.com/MeteoRwanda?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"> <iconify-icon icon="ant-design:twitter-circle-filled"></iconify-icon></a>
-   </div>
-   <div>
-    <button>Connect to Us</button>
-  </div>
-   <div>
-    Copyright © 2023 <b>[Developer]</b> · All rights reserved · 
-    <a href="#">Contact Us</a> · 
-    <a href="#">Terms of Use</a> · 
-    <a href="#">Privacy Policy</a>
-  </div>
+
 </footer>
-  <u id="comment-list">
   <!-- Comment items go here -->
+  <script src="https://code.iconify.design/iconify-icon/1.0.3/iconify-icon.min.js"></script>
+
+  <style>
+    #dash{
+      display:flex;
+      align-items: center;
+      background-image: url(./Images/sky.jpg);
+      background-size: cover;
+      width: fit-content;
+      font-size: 2rem;
+      margin-left: 15rem;
+  
+      padding: 2rem;
+    }
+  </style>
+  
+  <script>
+   // Get blog list from local storage
+  let blogList = JSON.parse(localStorage.getItem("blogList")) || [];
+  
+  // Get blog list container
+  const blogListContainer = document.getElementById("dash");
+  
+  // Loop through blog list and create elements for each blog
+  blogList.forEach((blog) => {
+    const blogItem = document.createElement("div");
+    blogItem.classList.add("blog-item");
+  
+    const blogTitle = document.createElement("h2");
+    blogTitle.innerText = blog.title;
+  
+    const blogDate = document.createElement("p");
+    blogDate.innerText = blog.date;
+  
+    const blogImage = document.createElement("img");
+    blogImage.src = blog.image;
+  
+    const blogDesc = document.createElement("p");
+    blogDesc.innerText = blog.desc;
+  
+    blogItem.appendChild(blogTitle);
+    blogItem.appendChild(blogDate);
+    blogItem.appendChild(blogImage);
+    blogItem.appendChild(blogDesc);
+  
+    blogListContainer.appendChild(blogItem);
+  });
+  
+  
+  
+  // Get blog list from local storage
+  let blogListt = JSON.parse(localStorage.getItem("blogList")) || [];
+  </script>
+
+</body>
 </head>
 </html>
