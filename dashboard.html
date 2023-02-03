@@ -16,12 +16,12 @@
      <nav>
         <ul>
           <li><a href="#" class="dash">Dash board</a></li>
-          <li><a href="./portfolio.html">Log out</a></li>
+          <li><a href="./index.html">Log out</a></li>
         </ul>
       </nav>
     </header>
   </section>
-  <div> <a href="./admin.html"><button class="nwe-post">Add New-Post</button></div></a>
+  <div> <a href="./adminn.html"><button class="nwe-post">Add New-Post</button></div></a>
   <section class="menu">
     <div class="items">
       <i class="fa-solid fa-message"></i> <a href="message">Message</a>
@@ -36,7 +36,7 @@
 
   <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
 
-</body>
+
 <footer>
   <div class="footer"> 
     4<iconify-icon icon="akar-icons:facebook-fill"></iconify-icon><b>Musabwa Fanny</b><br>
@@ -68,41 +68,69 @@
   </style>
   
   <script>
-   // Get blog list from local storage
-  let blogList = JSON.parse(localStorage.getItem("blogList")) || [];
   
-  // Get blog list container
-  const blogListContainer = document.getElementById("dash");
-  
-  // Loop through blog list and create elements for each blog
-  blogList.forEach((blog) => {
-    const blogItem = document.createElement("div");
-    blogItem.classList.add("blog-item");
-  
-    const blogTitle = document.createElement("h2");
-    blogTitle.innerText = blog.title;
-  
-    const blogDate = document.createElement("p");
-    blogDate.innerText = blog.date;
-  
-    const blogImage = document.createElement("img");
-    blogImage.src = blog.image;
-  
-    const blogDesc = document.createElement("p");
-    blogDesc.innerText = blog.desc;
-  
-    blogItem.appendChild(blogTitle);
-    blogItem.appendChild(blogDate);
-    blogItem.appendChild(blogImage);
-    blogItem.appendChild(blogDesc);
-  
-    blogListContainer.appendChild(blogItem);
-  });
-  
-  
-  
+
   // Get blog list from local storage
-  let blogListt = JSON.parse(localStorage.getItem("blogList")) || [];
+let blogList = JSON.parse(localStorage.getItem("blogList")) || [];
+
+// Get blog list container
+const blogListContainer = document.getElementById("blog-list");
+
+// Loop through blog list and create elements for each blog
+blogList.forEach((blog, index) => {
+  const blogItem = document.createElement("div");
+  blogItem.classList.add("blog-item");
+
+  const blogTitle = document.createElement("h2");
+  blogTitle.innerText = blog.title;
+
+  const blogDate = document.createElement("p");
+  blogDate.innerText = blog.date;
+
+  const blogImage = document.createElement("img");
+  blogImage.src = blog.image;
+
+  const blogDesc = document.createElement("p");
+  blogDesc.innerText = blog.desc;
+
+  const editBtn = document.createElement("button");
+  editBtn.innerText = "Edit";
+  editBtn.onclick = () => {
+    // Code for editing the blog
+    const newTitle = prompt("Enter new title:", blog.title);
+    const newDate = prompt("Enter new date:", blog.date);
+    const newImage = prompt("Enter new image URL:", blog.image);
+    const newDesc = prompt("Enter new description:", blog.desc);
+    if (newTitle && newDate && newImage && newDesc) {
+      blog.title = newTitle;
+      blog.date = newDate;
+      blog.image = newImage;
+      blog.desc = newDesc;
+      localStorage.setItem("blogList", JSON.stringify(blogList));
+      blogTitle.innerText = blog.title;
+      blogDate.innerText = blog.date;
+      blogImage.src = blog.image;
+      blogDesc.innerText = blog.desc;
+    }
+  };
+
+  const deleteBtn = document.createElement("button");
+  deleteBtn.innerText = "Delete";
+  deleteBtn.onclick = () => {
+    blogList.splice(index, 1);
+    localStorage.setItem("blogList", JSON.stringify(blogList));
+    blogListContainer.removeChild(blogItem);
+  };
+
+  blogItem.appendChild(blogTitle);
+  blogItem.appendChild(blogDate);
+  blogItem.appendChild(blogImage);
+  blogItem.appendChild(blogDesc);
+  blogItem.appendChild(editBtn);
+  blogItem.appendChild(deleteBtn);
+
+  blogListContainer.appendChild(blogItem);
+});
   </script>
 
 </body>

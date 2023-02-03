@@ -34,7 +34,7 @@ nav{
   padding:10rem;
 }
 .hom span{
-color: #031118;
+color: #f9fdff;
 margin-top:3.2rem;
 padding: 1rem;
 }
@@ -61,7 +61,7 @@ img{
   border-radius:30%;
   display:flex;
   flex-direction: column;
-  width:90%
+  width:170%
   
 }
 
@@ -69,7 +69,7 @@ img{
   display:inline-block;
   padding-left: 10rem;
   padding-right: 1rem;
-  margin-top: 7rem;
+  margin-top: 1rem;
   text-align: justify;
   font-size: 1.5rem;
 }
@@ -111,91 +111,165 @@ body{
   top:6rem
  
 }
-
-
-
-
-
-
-.about .heading {
-  text-align: center;
-  margin: 6rem;
-  font-size: 4rem;
-  padding: 1rem;
-  border-radius: 0.1rem solid rgb(96, 68, 255);
+@media only screen and (max-width: 600px) {
+  .header, nav {
+    display: block;
+    flex-direction: column;
+    font-size: .4rem;
+  }
+  .header {
+    margin-left: 0;
+  }
+  .hom span {
+    margin-top: .1rem;
+  }
+  .container {
+    font-size: .5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 2rem;
+  }
 }
-.about{
-  background-color: rgb(154, 233, 233);
+
+
+@media only screen and (max-width: 600px) {
+  .header {
+    height: 8vh;
+    padding: 1rem;
+    font-size: .5rem;
+  }
+  .hom {
+    padding: 1rem;
+  }
+  .hom span {
+    font-size: 1rem;
+  }
+  .hom p {
+    font-size: 1rem;
+  }
+  .container {
+    font-size: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 1rem;
+  }
+  .btn {
+    padding: .5rem;
+    margin-top: 1rem;
+  }
+  #about .row{
+
+    display: block;
+    
+  }
 }
 
-.about .heading span {
-  color: rgb(0, 247, 255);
-  padding: 1rem;
-  border-radius: 0.1rem solid rgb(252, 252, 250);
+
+
+
+
+@media only screen and (max-width: 600px) {
+  #about{
+    padding: 1rem;
+  }
+  body{
+    display: block;
+  }
+  #about .row{
+
+    display: block;
+    padding-left: .1rem;
+    position: relative;
+  }
+  #about .counter{
+    padding: .5rem;
+      display: flex;
+      flex-direction: column;
+      
+    }
+    #about .counter .box{
+      font-size: .4rem;
+      padding: .3rem .3rem .3rem;
+      margin: .2rem;
+      display: flex;
+      flex-direction: column;
+      background-color: #f7f7f8;
+      border-radius: .2rem;
+     }
 }
-.about .row {
+#about{
+  background-image:url(./Images/sky.jpg);
+  background-size: cover;
+  padding: 10rem;
+}
+
+#about .row{
+
   display: flex;
-  align-items: center;
-  justify-content: center;
-  /* flex-wrap:wrap; */
-  padding: 5rem;
+  padding-left: 1rem;
+  position: relative;
+  gap:1rem;
 }
+#about .name{
 
-.about .row .info {
-  flex: 1 1 48rem;
-  padding: 6rem 1rem;
-  padding-left: 6rem;
-}
-
-.about .row .info h3 {
-  font-size: 2rem;
-  color: rgb(19, 19, 18);
-  padding: 1rem 0;
-  font-weight: normal;
-}
-
-.about .row .info span {
-  color: rgb(15, 28, 207);
-  padding: 0 -0.5rem;
-}
-
-.about .row .counter {
-  flex: 1 1 48rem;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  padding-left: 15rem;
+  position: relative;
+  gap:1rem;
+}
+#about .row .info {
+  margin-top: 2rem;
+ display: block;
+ border-radius: 2rem;
 }
 
-.about .row .counter .box {
+#about .row .info span {
+color:white
+}
+#about .row .info h3{
+  color: blue;
+  padding: 1.5rem;
+  width: 26rem;
+ 
+}
+#about .counter{
+padding: 1.4rem;
   display: flex;
-  /* width:15rem; */
-  gap: 7rem;
-  background: #fcfcfc;
-  text-align: center;
-  flex: 1 1 40rem;
-  padding: 1rem;
-  margin: 2rem;
-  border-radius: 1.5px;
-  max-width: fit-content;
+  
 }
+#about .counter .boxx{
+  display: block;
+ 
+ 
+}
+#about .counter .boxxx{
+  display: block;
+  justify-content: space-between;
 
-.about .row .counter .box span {
+}
+#about .counter .box{
   font-size: 1.3rem;
-  color: rgb(8, 8, 8);
-}
+  padding: 3rem 3rem 3rem;
+  margin: 2rem;
+  display: flex;
+  background-color: #f7f7f8;
+  border-radius: 2rem;
+ }
+ #about .counter .box span{
+  color:rgb(5, 0, 0);
+ }
+ #about .counter .box h3{
+  font-size: 2rem;
+color: aqua;
+ }
+ #about .counter .box h3{
+  opacity: 80%;
+ }
 
-.about .row .counter .box h3 {
-  font-size: 1.7rem;
-  color: rgb(47, 9, 187);
-  margin: 0;
-}
-h1 {
-  color: white;
-}
 
-.heading {
-  padding: 8rem;
-}
+
+
+
 .education{
   background-image:url(./Images/sky.jpg);
   background-size: cover;
@@ -208,6 +282,9 @@ h1 {
   flex-wrap: wrap;
   padding: 8rem;
   padding-left: .1rem;
+}
+.grade{
+  padding-left: 3rem;
 }
 
 .education .box-container .box {
@@ -287,121 +364,130 @@ b{
   color:#14f7db
 }
 
-.contact .my-info {
-  font-size: 1.9rem;
-  color: #fff;
+.contact-me{
+  background-image:url(./Images/sky.jpg) ;
+  padding: 10rem;
+  background-size: cover;
+}
+.contact-me h1{
   padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
 }
-
-.contact .my-info span {
-  margin-left: 4rem;
-}
-
-.contact .my-info div,
-.contact .my-info a {
-  display: flex;
-  align-items: center;
-}
-
-.contact a {
-  color: rgb(247, 248, 247);
-}
-
-.contact .my-info .name {
-  color: rgb(15, 12, 218);
-  font-size: 2.3rem;
-}
-
-.contact {
-  display: flex;
-  padding: 19rem;
-  background-color: #6acccf;
-}
-
 iconify-icon{
-  width: 50px;
-  padding: .1rem;
+  margin-left: 2rem;
 }
-.contact .message-container {
-  
+
+.contact-me p{
+margin-left: 10rem;
+font-size: 2rem;
+padding: 1rem;
+}
+footer .name{
   display: flex;
-  flex-direction: column;
-  padding: 1rem;
-  align-items: center;
-  margin: 1rem;
-}
-
-.contact .message-container input {
-
-  font-size: 1.3rem;
-  padding: .1rem;
-  border-radius: 2rem;
-}
-
-
-#contact-form{
-  background-color: none;
-}
-#contact-form {
-  width: 500px;
-  margin: 0 auto;
-  text-align: left;
-}
-label {
-  font-weight: bold;
-}
-.area{
-  text-align: center;
-}
-input[type="text"], input[type="email"]{
-  width: 100%;
-  padding: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 1rem;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
-}
-
-textarea {
-  width: 100%;
-  padding: 1rem;
-  border: 1px solid #ccc;
-  border-radius: .1rem;
+  padding: 8rem;
+  margin-left: 5rem;
   
 }
-input[type="submit"] {
-  background-color: #4CAF50;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+
+
+  .form11 {
+    display: flex;
+    justify-content: space-between;
+margin-left: 2.5rem;
+   
+  }
+
+  .four {
+    width: 250%;
+    display: flex;
+    gap:1rem;
+    text-align: center;
+    align-items: center;
+  }
+.four1{
+ 
+  width: 250%;
+  display: flex;
+  gap:1rem;
 }
-input[type="submit"]:hover {
-  background-color: #45a049;
-}
+
+
+  input[type="text"],
+  input[type="location"],
+  input[type="email"],
+  textarea {
+    width: 249%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    height: 50%;
+  }
+
+  input[type="submit"] {
+    width: 250%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+
+  
+
+
+  @media (max-width: 768px) {
+    .four,
+    .four1 {
+      width: 100%;
+    }
+      .skills {
+        width: 100%;
+  }
+  .box{
+    display: block;
+    flex-direction: column-reverse;
+  }
+    .blogs {
+      width: 100%;
+      display: block;
+    }
+    .portfolio .box-container .box img {
+width: 20%;
+    }
+    .box-container{
+      display: block;
+    }
+  }
+
 
 
 
 .skills {
-  padding: 12rem;
-  font-size: 1.7rem;
+  padding: 8rem;
+  font-size: 1.2rem;
   font-weight: bold;
   color: white;
   background-color: #43d37f;
  
 }
-.skills h1{
+.skills h4{
+ color: blue;
+ padding-top: 2rem;
+}
+.skills h2{
   color: rgb(74, 50, 180);
   text-align: center;
-  background-color: #fff;
-  padding: .2rem;
-  border-radius: 10%;
+}
+.skills h3{
+  color: rgb(251, 251, 252);
+  text-align: center;
 }
 .skills .box-container {
   display: flex;
@@ -413,10 +499,12 @@ input[type="submit"]:hover {
 }
 
 .blogs {
-  font-size: 1.2rem;
-  padding: 10rem;
+  font-size: 1.19rem;
+  padding: 1rem;
+  font-weight: bold;
   color: white;
-  display: flex;
+  gap:1rem;
+  display: block;
   background-image:url(./Images/sky.jpg);
   background-size: cover;
   
@@ -426,21 +514,34 @@ input[type="submit"]:hover {
 
 .blogs img {
 
-  width: 50%;
-  height: 10rem;
+  width: 40%;
+  height: 20rem;
   align-items: center;
-  margin-left: 14rem;
+  margin-left: 30rem;
   align-content: center;
+  padding-top: 6rem;
 }
-.blogs h2 {
+
+
+  .blogs .title{
+    padding: 1rem;
   text-align: center;
+  align-content: center;
+  color: #45a049;
+}
+.blogs p{
+  font-weight: bold;
+  padding: 2rem;
+color: #080808;
+font-size: 2rem;
 }
 button{
-  font-size: 1rem;
+  font-size: 1.5rem;
+  text-align: center;
 }
 .rd{
   text-align: center;
-  padding-top: 1rem;
+  padding-top: 0rem;
   color: blue;
 }
 
@@ -467,9 +568,9 @@ button{
 
 #login-form {
   border-radius: 10%;
-  padding: 4rem;
+  padding: 2rem;
   border: 2px solid #ccc;
-  margin-top: 10rem;
+  margin-top: 8rem;
   margin-left: 30rem;
   width:fit-content;
 }
@@ -496,7 +597,8 @@ button{
 
   /* Full-width input fields */
 
-input[type=email] {
+
+  #login-form input[type=email] {
   border-radius: 5rem;
   padding: 1rem;
   display:flex;
@@ -506,7 +608,8 @@ input[type=email] {
 }
 
 
-input[type=password] {
+
+#login-form input[type=password] {
   border-radius: 5rem;
   padding: 1rem;
   display:flex;
@@ -515,11 +618,13 @@ input[type=password] {
   width:100%
 }
 
-input[type=email]:focus, input[type=password]:focus {
+
+#login-form  input[type=email]:focus, input[type=password]:focus {
   outline: none;
 }
 
-input[type=submit]{
+
+#login-form  input[type=submit]{
   background-color:green;
   padding: .8rem;
   border-radius:4rem;
@@ -527,1039 +632,16 @@ input[type=submit]{
   margin: 1rem;
   width:100%
 }
-.icon{
+
+#login-form  .icon{
   display:flex;
   margin-left: 12rem;
   padding: 1rem;
 }
 
-
-
-
-
-
-/* Change styles for cancel button and signup button on extra small screens */
-@media screen and (min-width: 600px) {
-
-  *{
-    margin: 0;
-    padding:0;
-    font-family: "poppin", sans-serif;
-    box-sizing: border-box;
-  }
-  .header{
-    height: 4vh;
-    width:fit-content;
-    padding:2rem;
-    background-color:none;
-   position:fixed;
-   float: left;
-   margin-left: 13rem;
-   color: blue;
-  }
-  .header:hover{
-    color: red;
-    text-transform: capitalize;
-  
-  }
-  nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .hom{
-    display:flex;
-    flex-direction: row;
-    padding:10rem;
-  }
-  .hom span{
-  color: #031118;
-  margin-top:3.2rem;
-  padding: 1rem;
-  }
-  .hom p{
-    padding: 1rem;
-    align-items: justify;
-    align-content: center;
-  
-    }
-  
-  .hom h1 span{
-    margin-top: 1rem;
-  
-  }
-    
-  .hom{
-    
-    background-image: url(./Images/sky.jpg);
-    background-repeat: none;
-    background-position: center;
-    background-size: contain;
-  }
-  img{
-    border-radius:30%;
-    display:flex;
-    flex-direction: column;
-    width:90%
-    
-  }
- 
-  .container{
-    display:inline-block;
-    padding-left: 10rem;
-    padding-right: 1rem;
-    margin-top: 7rem;
-    text-align: justify;
-    font-size: 1.5rem;
-  }
-  hr{
-   border: 3px solid rgb(55, 211, 133);
-    background-color: rgb(0, 204, 255);
-  }
-  
-  .btn {
-   
-   border-radius: .3rem;
-   padding: 1rem;
-   margin-top: 2rem;
-  }
-  .links{
-    padding: 2px;
-  }
-  
-  .links li{
-    display:inline-block;
-    margin: 0 15px;
-  }
-  
-  .links li a{
-    text-decoration: none;
-    color: rgb(252, 253, 253);
-    padding: 8px 0;
-  }
-  
-  .links li a:hover{
-    text-decoration: none;
-    color: rgb(206, 29, 29);
-    padding: 8px 0;
-    text-decoration: underline;
-  }
-  
-  body{
-    padding: .5rem;
-    top:6rem
-   
-  }
-  
-  
-  
-  
-  
-  
-  .about .heading {
-    text-align: center;
-    margin: 6rem;
-    font-size: 4rem;
-    padding: 1rem;
-    border-radius: 0.1rem solid rgb(96, 68, 255);
-  }
-  .about{
-    background-color: rgb(154, 233, 233);
-  }
-  
-  .about .heading span {
-    color: rgb(0, 247, 255);
-    padding: 1rem;
-    border-radius: 0.1rem solid rgb(252, 252, 250);
-  }
-  .about .row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* flex-wrap:wrap; */
-    padding: 5rem;
-  }
-  
-  .about .row .info {
-    flex: 1 1 48rem;
-    padding: 6rem 1rem;
-    padding-left: 6rem;
-  }
-  
-  .about .row .info h3 {
-    font-size: 2rem;
-    color: rgb(19, 19, 18);
-    padding: 1rem 0;
-    font-weight: normal;
-  }
-  
-  .about .row .info span {
-    color: rgb(15, 28, 207);
-    padding: 0 -0.5rem;
-  }
-  
-  .about .row .counter {
-    flex: 1 1 48rem;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  
-  .about .row .counter .box {
-    display: flex;
-    /* width:15rem; */
-    gap: 7rem;
-    background: #fcfcfc;
-    text-align: center;
-    flex: 1 1 40rem;
-    padding: 1rem;
-    margin: 2rem;
-    border-radius: 1.5px;
-    max-width: fit-content;
-  }
-  
-  .about .row .counter .box span {
-    font-size: 1.3rem;
-    color: rgb(8, 8, 8);
-  }
-  
-  .about .row .counter .box h3 {
-    font-size: 1.7rem;
-    color: rgb(47, 9, 187);
-    margin: 0;
-  }
-  h1 {
-    color: white;
-  }
-  
-  .heading {
-    padding: 8rem;
-  }
-  .education{
-    background-image:url(./Images/sky.jpg);
-    background-size: cover;
-  }
-  
-  .education .box-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    padding: 8rem;
-    padding-left: .1rem;
-  }
-  
-  .education .box-container .box {
-    width: 2rem;
-    margin: 2rem 2.5rem 3rem;
-    padding-left: 3.3rem;
-    border-left: 0.2rem solid #fff;
-    position: relative;
-  }
-  
-  .education .box-container span {
-    font-size: 1.2rem;
-    gap:2rem;
-    background: rgb(252, 250, 250);
-    color: rgb(28, 189, 230);
-    border-radius: 1rem;
-    padding:1.1rem;
-    border: solid 2px blue;
-  
-  }
-  
-  .education .box-container h3 {
-    font-size: 1.5rem;
-    color: rgb(6, 6, 8);
-    padding-top: 1.13rem;
-    margin-top: 2rem;
-  }
-  
-  .education .box-container p {
-    font-size: 1.5rem;
-    color: #fff;
-    padding-top: .7rem;
-    margin-top: 2rem;
-    font-weight: bolder;
-  }
-  
-  iconify-icon{
-    display: block;
-  }
-  
-  .portfolio {
-    padding: 13.1rem;
-    background-image:url(./Images/sky.jpg); 
-  }
-  .portfolio h1 {
-    font-size: 2.3rem;
-    text-align: center;
-    color: rgb(14, 0, 0);
-    padding-top: 2rem;
-    font-weight: bold;
-  }
-  
-  .portfolio .box-container {
-    display: flex;
-    gap: 1rem;
-    padding-right:1rem;
-    }
-  
-    
-  .portfolio .box-container .box img {
-      width: 20rem;
-    height: 18rem;
-    cursor: pointer;
-    padding: 2rem;
-  }
-  
-  b{
-    padding-left:3rem;
-    text-align:center;
-    align-items: center;
-    color:rgb(14, 2, 2);
-    font-weight: bold;
-  }
-  .portfolio .box-container .box img:hover {
-    opacity: 0.3;
-    color:#14f7db
-  }
-  
-  .contact .my-info {
-    font-size: 1.9rem;
-    color: #fff;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .contact .my-info span {
-    margin-left: 4rem;
-  }
-  
-  .contact .my-info div,
-  .contact .my-info a {
-    display: flex;
-    align-items: center;
-  }
-  
-  .contact a {
-    color: rgb(247, 248, 247);
-  }
-  
-  .contact .my-info .name {
-    color: rgb(15, 12, 218);
-    font-size: 2.3rem;
-  }
-  
-  .contact {
-    display: flex;
-    padding: 19rem;
-    background-color: #6acccf;
-  }
-  
-  iconify-icon{
-    width: 50px;
-    padding: .1rem;
-  }
-  .contact .message-container {
-    
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    align-items: center;
-    margin: 1rem;
-  }
-  
-  .contact .message-container input {
-  
-    font-size: 1.3rem;
-    padding: .1rem;
-    border-radius: 2rem;
-  }
-  
-  
-  #contact-form{
-    background-color: none;
-  }
-  #contact-form {
-    width: 500px;
-    margin: 0 auto;
-    text-align: left;
-  }
-  label {
-    font-weight: bold;
-  }
-  .area{
-    text-align: center;
-  }
-  input[type="text"], input[type="email"]{
-    width: 100%;
-    padding: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 1rem;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-  }
-  
-  textarea {
-    width: 100%;
-    padding: 1rem;
-    border: 1px solid #ccc;
-    border-radius: .1rem;
-    
-  }
-  input[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  input[type="submit"]:hover {
-    background-color: #45a049;
-  }
-  
-  
-  
-  .skills {
-    padding: 12rem;
-    font-size: 1.7rem;
-    font-weight: bold;
-    color: white;
-    background-color: #43d37f;
-   
-  }
-  .skills h1{
-    color: rgb(74, 50, 180);
-    text-align: center;
-    background-color: #fff;
-    padding: .2rem;
-    border-radius: 10%;
-  }
-  .skills .box-container {
-    display: flex;
-    gap: 3rem;
-    padding-top: 2rem;
-  }
-  .skills img {
-    width: 25rem;
-  }
-  
-  .blogs {
-    font-size: 1.2rem;
-    padding: 10rem;
-    color: white;
-    display: flex;
-    background-image:url(./Images/sky.jpg);
-    background-size: cover;
-    
-  }
-  
-  
-  
-  .blogs img {
-  
-    width: 50%;
-    height: 10rem;
-    align-items: center;
-    margin-left: 14rem;
-    align-content: center;
-  }
-  .blogs h2 {
-    text-align: center;
-  }
-  button{
-    font-size: 1rem;
-  }
-  .rd{
-    text-align: center;
-    padding-top: 1rem;
-    color: blue;
-  }
-  
-  .rd:hover{
-    color:rgb(241, 8, 8);
-   
-    background-color: #14f7db;
-    
-  }
-  #login{
-    background-image: url(./Images/sky.jpg);
-    padding: .3rem;
-    background-size: cover;
-  }
-  
-  .loginmsg{
-    font-size: .7rem;
-  }
-  .me{
-    width:20%;
-    position: relative;
-    margin-left: 15rem;
-  }
-  
-  #login-form {
-    border-radius: 10%;
-    padding: 4rem;
-    border: 2px solid #ccc;
-    margin-top: 10rem;
-    margin-left: 30rem;
-    width:fit-content;
-  }
-  
-  #login-form h2 {
-   text-align:center;
-    padding: .7rem;
-  }
-  
-  #login-form p {
-    text-align:center;
-    padding: .7rem;
-   }
-    .form{
-      background-color:white;
-      padding: 4rem;
-      border-radius: 20%;
-      border: solid blue;
-    }
-  
-   
-  
-   
-  
-    /* Full-width input fields */
-  
-  input[type=email] {
-    border-radius: 5rem;
-    padding: 1rem;
-    display:flex;
-    border: solid rgb(251, 252, 252);
-    font-size: 1.0rem;
-    width:100%
-  }
-  
-  
-  input[type=password] {
-    border-radius: 5rem;
-    padding: 1rem;
-    display:flex;
-    border: solid rgb(251, 252, 252);
-    font-size: 1.0rem;
-    width:100%
-  }
-  
-  input[type=email]:focus, input[type=password]:focus {
-    outline: none;
-  }
-  
-  input[type=submit]{
-    background-color:green;
-    padding: .8rem;
-    border-radius:4rem;
-    margin-left:1rem;
-    margin: 1rem;
-    width:100%
-  }
-  .icon{
-    display:flex;
-    margin-left: 12rem;
+@media (max-width: 600px) {
+  .header {
+    height: 6vh;
     padding: 1rem;
   }
-  
 }
-
-  
-
-@media (max-width: 291px) {
-  header {
-    width: 100%;
-  }
-  .container{
-    width: 100%;
-  }
-}
-.container{
-  display:inline-block;
-  padding-left: 10rem;
-  padding-right: 1rem;
-  margin-top: 7rem;
-  text-align: justify;
-  font-size: 1.5rem;
-}
-hr{
- border: 3px solid rgb(55, 211, 133);
-  background-color: rgb(0, 204, 255);
-}
-
-.btn {
- 
- border-radius: .3rem;
- padding: 1rem;
- margin-top: 2rem;
-}
-.links{
-  padding: 2px;
-}
-
-.links li{
-  display:inline-block;
-  margin: 0 15px;
-}
-
-.links li a{
-  text-decoration: none;
-  color: rgb(252, 253, 253);
-  padding: 8px 0;
-}
-
-.links li a:hover{
-  text-decoration: none;
-  color: rgb(206, 29, 29);
-  padding: 8px 0;
-  text-decoration: underline;
-}
-
-body{
-  padding: .5rem;
-  top:6rem
- 
-}
-
-
-
-
-
-
-.about .heading {
-  text-align: center;
-  margin: 6rem;
-  font-size: 4rem;
-  padding: 1rem;
-  border-radius: 0.1rem solid rgb(96, 68, 255);
-}
-.about{
-  background-color: rgb(154, 233, 233);
-}
-
-.about .heading span {
-  color: rgb(0, 247, 255);
-  padding: 1rem;
-  border-radius: 0.1rem solid rgb(252, 252, 250);
-}
-.about .row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* flex-wrap:wrap; */
-  padding: 5rem;
-}
-
-.about .row .info {
-  flex: 1 1 48rem;
-  padding: 6rem 1rem;
-  padding-left: 6rem;
-}
-
-.about .row .info h3 {
-  font-size: 2rem;
-  color: rgb(19, 19, 18);
-  padding: 1rem 0;
-  font-weight: normal;
-}
-
-.about .row .info span {
-  color: rgb(15, 28, 207);
-  padding: 0 -0.5rem;
-}
-
-.about .row .counter {
-  flex: 1 1 48rem;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.about .row .counter .box {
-  display: flex;
-  /* width:15rem; */
-  gap: 7rem;
-  background: #fcfcfc;
-  text-align: center;
-  flex: 1 1 40rem;
-  padding: 1rem;
-  margin: 2rem;
-  border-radius: 1.5px;
-  max-width: fit-content;
-}
-
-.about .row .counter .box span {
-  font-size: 1.3rem;
-  color: rgb(8, 8, 8);
-}
-
-.about .row .counter .box h3 {
-  font-size: 1.7rem;
-  color: rgb(47, 9, 187);
-  margin: 0;
-}
-h1 {
-  color: white;
-}
-
-.heading {
-  padding: 8rem;
-}
-.education{
-  background-image:url(./Images/sky.jpg);
-  background-size: cover;
-}
-
-.education .box-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  padding: 8rem;
-  padding-left: .1rem;
-}
-
-.education .box-container .box {
-  width: 2rem;
-  margin: 2rem 2.5rem 3rem;
-  padding-left: 3.3rem;
-  border-left: 0.2rem solid #fff;
-  position: relative;
-}
-
-.education .box-container span {
-  font-size: 1.2rem;
-  gap:2rem;
-  background: rgb(252, 250, 250);
-  color: rgb(28, 189, 230);
-  border-radius: 1rem;
-  padding:1.1rem;
-  border: solid 2px blue;
-
-}
-
-.education .box-container h3 {
-  font-size: 1.5rem;
-  color: rgb(6, 6, 8);
-  padding-top: 1.13rem;
-  margin-top: 2rem;
-}
-
-.education .box-container p {
-  font-size: 1.5rem;
-  color: #fff;
-  padding-top: .7rem;
-  margin-top: 2rem;
-  font-weight: bolder;
-}
-
-iconify-icon{
-  display: block;
-}
-
-.portfolio {
-  padding: 13.1rem;
-  background-image:url(./Images/sky.jpg); 
-  background-size: cover;
-  background-position: inherit;
-}
-.portfolio h1 {
-  font-size: 2.3rem;
-  text-align: center;
-  color: rgb(14, 0, 0);
-  padding-top: 2rem;
-  font-weight: bold;
-}
-
-.portfolio .box-container {
-  display: flex;
-  gap: 1rem;
-  padding-right:1rem;
-  }
-
-  
-.portfolio .box-container .box img {
-    width: 20rem;
-  height: 18rem;
-  cursor: pointer;
-  padding: 2rem;
-}
-
-b{
-  padding-left:3rem;
-  text-align:center;
-  align-items: center;
-  color:rgb(14, 2, 2);
-  font-weight: bold;
-}
-.portfolio .box-container .box img:hover {
-  opacity: 0.3;
-  color:#14f7db
-}
-
-.contact .my-info {
-  font-size: 1.9rem;
-  color: #fff;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.contact .my-info span {
-  margin-left: 1rem;
-}
-
-.contact .my-info div,
-.contact .my-info a {
-  display: flex;
-  align-items: center;
-}
-
-.contact a {
-  color: rgb(252, 253, 252);
-}
-
-.contact .my-info .name {
-  color: rgb(15, 12, 218);
-  font-size: 2.3rem;
-}
-
-.contact {
-  display: flex;
-  padding: 19rem;
-  background-color: #6acccf;
-}
-
-iconify-icon{
-  width: 50px;
-  padding: .1rem;
-}
-.contact .message-container {
-  
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-  align-items: center;
-  margin: 1rem;
-}
-
-.contact .message-container input {
-
-  font-size: 1.3rem;
-  padding: .1rem;
-  border-radius: 2rem;
-}
-
-
-#contact-form{
-  background-color: none;
-}
-#contact-form {
-  width: 500px;
-  margin: 0 auto;
-  text-align: left;
-}
-label {
-  font-weight: bold;
-}
-.area{
-  text-align: center;
-}
-input[type="text"], input[type="email"]{
-  width: 100%;
-  padding: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 1rem;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
-}
-
-textarea {
-  width: 100%;
-  padding: 1rem;
-  border: 1px solid #ccc;
-  border-radius: .1rem;
-  
-}
-input[type="submit"] {
-  background-color: #4CAF50;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-input[type="submit"]:hover {
-  background-color: #45a049;
-}
-
-
-
-.skills {
-  padding: 12rem;
-  font-size: 1.7rem;
-  font-weight: bold;
-  color: white;
-  background-color: #43d37f;
- 
-}
-.skills h1{
-  color: rgb(74, 50, 180);
-  text-align: center;
-  background-color: #fff;
-  padding: .2rem;
-  border-radius: 10%;
-}
-.skills .box-container {
-  display: flex;
-  gap: 3rem;
-  padding-top: 2rem;
-}
-.skills img {
-  width: 25rem;
-}
-
-.blogs {
-  font-size: 2rem;
-  color: rgb(14, 13, 13);
-  display: flex;
-  background-image:url(./Images/sky.jpg);
-  background-size: cover;
-  
-}
-
-
-
-.blogs img {
-
-  width: 100%;
-  height: 10rem;
-  align-items: center;
-  margin-left: 5rem;
-  align-content: center;
-  margin-right: 1rem;
-}
-.blogs h2 {
-  text-align: center;
-}
-button{
-  font-size: 1rem;
-}
-.rd{
-  text-align: center;
-  padding-top: .7rem;
-  color: blue;
-}
-
-.rd:hover{
-  color:rgb(241, 8, 8);
- 
-  background-color: #14f7db;
-  
-}
-.blogs{
-  padding: 14rem;
-}
-
-.bgimg{
-align-items: center;
-width: 100%;
-}
-#login{
-  background-image: url(./Images/sky.jpg);
-  padding: .3rem;
-  background-size: cover;
-}
-
-.loginmsg{
-  font-size: .7rem;
-}
-.me{
-  width:20%;
-  position: relative;
-  margin-left: 15rem;
-}
-
-#login-form {
-  border-radius: 10%;
-  padding: 4rem;
-  border: 2px solid #ccc;
-  margin-top: 10rem;
-  margin-left: 25rem;
-  width:fit-content;
-}
-
-#login-form h2 {
- text-align:center;
-  padding: .7rem;
-}
-
-#login-form p {
-  text-align:center;
-  padding: .7rem;
- }
-  .form{
-    background-color:white;
-    padding: 2rem;
-    border-radius: 20%;
-    border: solid blue;
-  }
-
- 
-
- 
-
-  /* Full-width input fields */
-
-input[type=email] {
-  border-radius: 5rem;
-  padding: 1rem;
-  display:flex;
-  border: solid rgb(251, 252, 252);
-  font-size: 1.0rem;
-  width:100%
-}
-
-
-input[type=password] {
-  border-radius: 5rem;
-  padding: 1rem;
-  display:flex;
-  border: solid rgb(251, 252, 252);
-  font-size: 1.0rem;
-  width:100%
-}
-
-input[type=email]:focus, input[type=password]:focus {
-  outline: none;
-}
-
-input[type=submit]{
-  background-color:green;
-  padding: .8rem;
-  border-radius:4rem;
-  margin-left:3rem;
-  margin: 1rem;
-  width:100%;
-}
-.icon{
-  display:flex;
-  margin-left: 12rem;
-  padding: 1rem;
-}
-
-
-

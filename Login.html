@@ -108,7 +108,7 @@ function showNotification(message) {
   notification.style.display = "block";
   setTimeout(function() {
     notification.style.display = "none";
-  }, 5000);
+  }, 10000);
 }
 
 
@@ -143,14 +143,14 @@ form.addEventListener("submit", function(event) {
   const user = { email, password };
   localStorage.setItem("user", JSON.stringify(user));
   
-  // Clear the form
-  form.reset();
+
   
   // Show a message to the user
   showNotification("Log In Success!!");
 
   window.location.href='./admin.html';
-  showNotification("Log In Success!!");
+    // Clear the form
+    form.reset();
   
 });
 

@@ -109,7 +109,7 @@ form.addEventListener("submit", function(event) {
   
   // Show a message to the user
   showNotification("Signup successful!");
-  window.location.href='./portfolio.html';
+  window.location.href='./index.html';
 });
 
 
@@ -228,14 +228,23 @@ input[type=submit]{
   
 }
 
-
-
-/* Change styles for cancel button and signup button on extra small screens */
-@media screen and (max-width: 300px) {
-  form {
-    width: 100%;
+@media (max-width: 767px) {
+  .container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .form {
+    margin-left: 0;
+    margin-top: 1rem;
+    text-align: center;
+  }
+  .icon {
+    margin-left: 0;
+    margin-top: 1rem;
+    text-align: center;
   }
 }
+
 
 </style>
 
