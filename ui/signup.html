@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sinup Page</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script defer src="../portfolio.js">
+    window.location.href = "admin.html";
+  </script>
+  <script>src="../signUp.js"</script>
+</head>
+<body>
+  <div class="container">
+  <div class="form">
+    <h2>Sign Up</h2>
+    <div class="icon">
+      <a href="https://github.com/nkurikiyimana/nkurikiyimana"><iconify-icon icon="carbon:logo-github"></iconify-icon></a>
+      <a href="https://web.facebook.com/?_rdc=1&_rdr"><iconify-icon icon="bi:facebook"></iconify-icon> </a>
+      <a href="https://twitter.com/MeteoRwanda?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"> <iconify-icon icon="ant-design:twitter-circle-filled"></iconify-icon></a>
+     </div>
+
+  <form>
+    <input type="text" id="fname" name="firstname"  placeholder="First Name"required >
+   
+  
+    <input type="text" id="lname" name="lastname" placeholder="Last Name" required>
+    
+    <input type="email" id="email" name="email" placeholder="Email" required>
+    
+    <input type="password" id="password" name="password" placeholder="Password" required>
+    
+    <input type="password" id="confirm" name="confirm" placeholder="Confirm Password" required>
+
+    <input type="checkbox" checked="checked" name="remember" <b class="k"> Remember me </b>
+
+      <a href="term.html" style="color:rgb(46, 46, 211)">Reader and Agree Terms & Privacy.</a></p>
+
+    
+    <a href="index.html"> <input type="submit" id="sign" value="Submit"></a>
+     
+ <p class="here"> Alread registered Log in  <a class="here"href="Login.html">Here!</a></p>
+  </form>
+  
+  </div>
+</div>
+
+
+  <div id="notification">
+    <p id="notification-message"></p>
+  </div>
+  
+  
+    <style>
+      #notification{
+        background-color: blue;
+        width: fit-content;
+        display: block;
+        margin-left: 70rem;
+        float: top;
+
+      }
+  #notification-message{
+    font-size: 1.3rem;
+    color: white;
+        } 
+        
+      </style>
+  
+  
+  
+  
+
+
+
+  <script>
+
+function showNotification(message) {
+  var notification = document.getElementById("notification");
+  var notificationMessage = document.getElementById("notification-message");
+  notificationMessage.innerHTML = message;
+  setTimeout(function() {
+    notification.style.display = "flex";
+  }, 3000);
+}
+
+const form = document.querySelector("form");
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+  // Get the form data
+  const fname = document.querySelector("#fname").value;
+  const lname = document.querySelector("#lname").value;
+  const email = document.querySelector("#email").value;
+  const password = document.querySelector("#password").value;
+  const confirm = document.querySelector("#confirm").value;
+  
+  // Form validation
+  if (password !== confirm) {
+    showNotification("Passwords do not match")
+    return;
+  }
+  
+  // Store the data to local storage
+  const user = { fname, lname, email, password };
+  localStorage.setItem("user", JSON.stringify(user));
+  
+  // Clear the form
+  form.reset();
+  
+  // Show a message to the user
+  showNotification("Signup successful!");
+  window.location.href='./index.html';
+});
+
+
+  </script>
+  
+  <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+
+  
+</body>
+
+<style>
+  *{
+    margin:0;
+    padding:0;
+   border: border-box;
+  }
+
+  
+  .container{
+    background-image:url(./images/sky.jpg);
+    display:flex;
+    padding: 2rem;
+    background-size: cover;
+  }
+  .icon{
+  display:flex;
+  margin-left: 4rem;
+  padding: .5rem;
+  gap:4rem;
+  font-size: 2rem;
+}
+
+.icon:hover{
+  color:#fff;
+  opacity: 70%;
+}
+
+
+  .form{ 
+    margin-left: 35rem;
+  }
+
+  .form p{
+   padding: 1rem;
+   color:rgb(8, 8, 8)
+  }
+.k{
+color: #fff;
+}
+  .here{
+    text-align: center;
+    color:rgb(61, 21, 236)
+  }
+
+  .form h2{
+    
+    text-align: center;
+    padding: 2rem;
+    font-size: 3rem;
+    color:blue
+   
+  }
+
+  /* Full-width input fields */
+input[type=text], input[type=password] {
+  margin: 2px 0 1px 0;
+  width:fit-content;
+  display:flex;
+  border: none;
+  border: solid rgb(10, 12, 12);
+  font-size: 1.0rem;
+  width:100%;
+  text-align: center;
+  padding: .7rem;
+  margin:1.2rem;
+  border-radius: .5rem;
+}
+
+input[type=email] {
+  text-align: center;
+  margin: 2px 0 1px 0;
+  display:flex;
+  border: none;
+  border: solid rgb(10, 12, 12);
+  font-size: 1.0rem;
+  margin:1.2rem;
+  width:100%
+
+}
+
+input[type=email] {
+  padding: .7rem;
+  border-radius: .5rem;
+}
+
+
+
+input[type=text]:focus, input[type=password]:focus {
+ 
+  outline: none;
+}
+
+input[type=email]:focus {
+  
+  outline: none;
+}
+
+input[type=submit]{
+  margin-left:1rem;
+  background-color:blue;
+  color: #fff;
+  padding: .2rem;
+  border-radius:4rem;
+  width:100%
+
+  
+}
+
+@media (max-width: 767px) {
+  .container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .form {
+    margin-left: 0;
+    margin-top: 1rem;
+    text-align: center;
+  }
+  .icon {
+    margin-left: 0;
+    margin-top: 1rem;
+    text-align: center;
+  }
+}
+
+
+</style>
+
+<script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+</body>
+</html>
