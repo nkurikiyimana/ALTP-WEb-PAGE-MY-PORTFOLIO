@@ -7,9 +7,10 @@
   <title>Blog</title>
   <link rel="stylesheet" href="single-blog-view.css"/>
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Forum" />
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <link rel="stylesheet" href="blog.css"/>
 </head>
-<body>
+<body onload="get()">
   
   <nav id="navbar">
       <div id="home">
@@ -208,17 +209,18 @@ flex-direction: column;
 
 
   <div id="blog-list">
-    <div id="like-section">
-      <label for="like">likes</label> 
-      <iconify-icon icon="ant-design:like-outlined"></iconify-icon>
-       <button id="yes-button" onclick="incrementLikes('yes')">Yes</button>
-       <iconify-icon icon="mdi:dislike-outline"></iconify-icon>
-       <button id="no-button" onclick="incrementLikes('no')">No</button>
-        <p id="like-count"></p><br>
-        <a href="./blogs.html"><b>Read more...</b></a>
-      </div>
-    
-  </div>
+ </div>
+
+        <script>
+            function get(){
+              const postdisplayer = document.getElementById("blog-list");
+              const element = JSON.parse(localStorage.getItem("blogs"));
+for(let i=0; i<get.length; i++){
+
+
+            } 
+           }
+        </script>
  
   <style>
 
@@ -329,6 +331,10 @@ blogList.forEach((blog, index) => {
 
   blogListContainer.appendChild(blogItem);
 });
+// Fetch Data from local storage to any page you want!!!!!!!!!!!!!!!!!!!!!!!
+
+const get = JSON.parse(localStorage.getItem("blogs"));
+
 
   </script>
 </body>

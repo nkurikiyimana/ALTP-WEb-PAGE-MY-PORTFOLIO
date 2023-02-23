@@ -21,7 +21,7 @@
       <a href="https://twitter.com/MeteoRwanda?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"> <iconify-icon icon="ant-design:twitter-circle-filled"></iconify-icon></a>
      </div>
 
-  <form>
+  <form id="form">
     <input type="text" id="fname" name="firstname"  placeholder="First Name"required >
    
   
@@ -85,7 +85,7 @@ function showNotification(message) {
   }, 3000);
 }
 
-const form = document.querySelector("form");
+const form1 = document.querySelector("form1");
 form.addEventListener("submit", function(event) {
   event.preventDefault();
   // Get the form data
@@ -114,6 +114,49 @@ form.addEventListener("submit", function(event) {
 });
 
 
+
+
+     
+        // Get the form element
+      const form = document.getElementById('form');
+
+      // Handle form submission
+      form1.addEventListener('submit', (event) => {
+        // Prevent the form from submitting normally
+        event.preventDefault();
+
+        // Get the form data
+        const formData = {
+          fname: document.getElementById('fname').value,
+          lname: document.getElementById('lname').value,
+          email: document.getElementById('email').value,
+          password: document.getElementById('password').value
+        };
+
+        // Send the form data to the API
+        fetch('http://localhost:3000/api/Signup', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formData)
+        })
+        .then(response => {
+          if (response.ok) {
+            // Handle successful submission
+            alert('new user  submitted successfully!');
+          } else {
+            // Handle submission error
+            console.log('Error submitting form.');
+          }
+        })
+        .catch(error => {
+          // Handle network error
+          console.log('Network error. Please try again later.');
+        });
+      });
+
+1
   </script>
   
   <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>

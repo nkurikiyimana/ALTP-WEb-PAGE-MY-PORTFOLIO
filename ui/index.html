@@ -16,6 +16,7 @@
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <head>
+
     <header>
       <div class="header">
         <nav class="header">
@@ -33,7 +34,8 @@
       </div>
     </nav>
 </header>
-    <body>
+    <body onload="get()">
+
       <section class="hom" id="home">
         <div>
           <img src="./Images/me.jpg" alt="Faustin">
@@ -226,7 +228,7 @@
       <p>Please we are there to fill the Gap don't hestate to let us know</p>
       <h1>---------------------------------------------------------Contact us----------------------------------------------------------------</h1>
       <div class="form11">
-        <form id="form1">
+        <form id="form">
           <div class="four1">
           <input type="text" id="name" name="name" placeholder="Please Enter your Name"><br>
           <input type="email" id="email" name="email" placeholder="Please Enter your Email"><br>
@@ -260,39 +262,9 @@
     
     <script>
 
-     // Save data to local storage
-document.getElementById("form1").addEventListener("submit", function(e) {
-  e.preventDefault();
-  const firstName = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const message = document.getElementById("message").value;
-  localStorage.setItem("name", firstName);
-  localStorage.setItem("email", email);
-  localStorage.setItem("message", message);
-});
-
-// Retrieve data from local storage
-function displayData() {
-  const name = localStorage.getItem("name");
-  const email = localStorage.getItem("email");
-  const message = localStorage.getItem("message");
-  document.getElementById("displayName").innerHTML = firstName + " " + lastName;
-  document.getElementById("displayEmail").innerHTML = email;
-  document.getElementById("displayMessage").innerHTML = message;
-}
-
-// Call the displayData function on the "dashboard" page
-if (window.location.pathname === "/dashboard.html") {
-  displayData();
-  form.reset;
-}
-      
-        
-    
-      
-     
+     // Post Contact message
         // Get the form element
-      const form = document.getElementById('form1');
+      const form = document.getElementById('form');
 
       // Handle form submission
       form.addEventListener('submit', (event) => {
@@ -304,8 +276,9 @@ if (window.location.pathname === "/dashboard.html") {
           name: document.getElementById('name').value,
           email: document.getElementById('email').value,
           message: document.getElementById('message').value
-        };
 
+        };
+console.log(formData);
         // Send the form data to the API
         fetch('http://localhost:3000/api/Contact', {
           method: 'POST',
@@ -329,6 +302,22 @@ if (window.location.pathname === "/dashboard.html") {
         });
       });
 
+async function get() {
+  // Send the form data to the API
+  axios.get('http://localhost:3000/api/Posts')
+
+  .then(response => {
+  
+      // Handle successful submission
+      console.log(response.data)
+      localStorage.setItem("blogs", JSON.stringify(response.data));
+    
+  })
+  .catch(error => {
+    // Handle network error
+    console.log('Network error. Please try again later.');
+  });
+}
 
 
       </script>
