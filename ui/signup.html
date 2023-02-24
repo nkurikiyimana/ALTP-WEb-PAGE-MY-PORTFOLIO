@@ -11,7 +11,7 @@
   </script>
   <script>src="../signUp.js"</script>
 </head>
-<body>
+<body onload="get()">
   <div class="container">
   <div class="form">
     <h2>Sign Up</h2>
@@ -21,7 +21,7 @@
       <a href="https://twitter.com/MeteoRwanda?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"> <iconify-icon icon="ant-design:twitter-circle-filled"></iconify-icon></a>
      </div>
 
-  <form id="form">
+  <form>
     <input type="text" id="fname" name="firstname"  placeholder="First Name"required >
    
   
@@ -31,7 +31,7 @@
     
     <input type="password" id="password" name="password" placeholder="Password" required>
     
-    <input type="password" id="confirm" name="confirm" placeholder="Confirm Password" required>
+    <!-- <input type="password" id="confirm" name="confirm" placeholder="Confirm Password" required> -->
 
     <input type="checkbox" checked="checked" name="remember" <b class="k"> Remember me </b>
 
@@ -84,8 +84,8 @@ function showNotification(message) {
     notification.style.display = "flex";
   }, 3000);
 }
-
-const form1 = document.querySelector("form1");
+/*
+const form1 = document.querySelector("form");
 form.addEventListener("submit", function(event) {
   event.preventDefault();
   // Get the form data
@@ -93,7 +93,7 @@ form.addEventListener("submit", function(event) {
   const lname = document.querySelector("#lname").value;
   const email = document.querySelector("#email").value;
   const password = document.querySelector("#password").value;
-  const confirm = document.querySelector("#confirm").value;
+  //const confirm = document.querySelector("#confirm").value;
   
   // Form validation
   if (password !== confirm) {
@@ -112,51 +112,67 @@ form.addEventListener("submit", function(event) {
   showNotification("Signup successful!");
   window.location.href='./index.html';
 });
+*/
 
 
+      // Post a new user
+        // Get the Signup form element
+        const form = document.querySelector('form');
+
+// Handle form submission
+form.addEventListener('submit', (event) => {
+  // Prevent the form from submitting normally
+  event.preventDefault();
+
+  // Get the form data
+  const formData = {
+    fName: document.getElementById('fname').value,
+    lName: document.getElementById('lname').value,
+    email: document.getElementById('email').value,
+    password: document.getElementById('password').value
+
+  };
+console.log(formData);
+  // Send the form data to the API
+  fetch('http://localhost:3000/api/Contact', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(formData)
+  })
+  .then(response => {
+    if (response.ok) {
+      // Handle successful submission
+      console.log('Form submitted successfully!');
+    } else {
+      // Handle submission error
+      console.log('Error submitting form.');
+    }
+  })
+  .catch(error => {
+    // Handle network error
+    console.log('Network error. Please try again later.');
+  });
+});
 
 
-     
-        // Get the form element
-      const form = document.getElementById('form');
+async function get() {
+  // Send the form data to the API
+  axios.get('http://localhost:3000/api/Signup')
 
-      // Handle form submission
-      form1.addEventListener('submit', (event) => {
-        // Prevent the form from submitting normally
-        event.preventDefault();
-
-        // Get the form data
-        const formData = {
-          fname: document.getElementById('fname').value,
-          lname: document.getElementById('lname').value,
-          email: document.getElementById('email').value,
-          password: document.getElementById('password').value
-        };
-
-        // Send the form data to the API
-        fetch('http://localhost:3000/api/Signup', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(formData)
-        })
-        .then(response => {
-          if (response.ok) {
-            // Handle successful submission
-            alert('new user  submitted successfully!');
-          } else {
-            // Handle submission error
-            console.log('Error submitting form.');
-          }
-        })
-        .catch(error => {
-          // Handle network error
-          console.log('Network error. Please try again later.');
-        });
-      });
-
-1
+  .then(response => {
+  
+      // Handle successful submission
+      console.log(response.data)
+      localStorage.setItem("Signup", JSON.stringify(response.data));
+    
+  })
+  .catch(error => {
+    // Handle network error
+    console.log('Network error. Please try again later.');
+  });
+}
   </script>
   
   <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
@@ -291,7 +307,7 @@ input[type=submit]{
 
 
 </style>
-
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
 </body>
 </html>

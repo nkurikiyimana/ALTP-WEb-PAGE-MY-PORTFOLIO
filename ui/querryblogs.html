@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Querry of Blog list</title>
+
+<!-- Display blogs in my dashboards -->
+
+<header>
+  <div id="toggleTable">Hello Admin Please click to View all listed Blogs</div>
+</header>
+</head>
+<body>
+<div id="myTable" class="hide">
+  <table>
+    <thead>
+      <tr>
+        <th class="t1">Title</th>
+        <th class="t1">Image</th>
+        <th class="t1">Content</th>
+        <th class="t1">Comments</th>
+        <th class="t1">Likes</th>
+        <th class="t1">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- table rows will be dynamically added here -->
+    </tbody>
+  </table>
+</div>
+
+<style>
+  #myTable{
+    background-image:url(./Images/sky.jpg) ;
+    background-size: cover;
+    font-size: 2rem;
+    margin: 1rem;
+  }
+.hide {
+  display: visible;
+}
+#toggleTable{
+  color:blue;
+  font-size: 150%;
+  padding-bottom: 2rem;
+  text-align:center;
+}
+.t1{
+  color:blue;
+  font-size: 150%;
+}
+
+</style>
+
+<script>
+
+ // Get a reference to the table element
+let table = document.querySelector("#myTable table tbody");
+
+// Add an event listener to the "Blogs" header
+let toggleButtonn = document.querySelector("#toggleTable");
+toggleButtonn.addEventListener("click", function() {
+  let tableContainer = document.querySelector("#myTable");
+  if (tableContainer.classList.contains("hide")) {
+    tableContainer.classList.remove("hide");
+  } else {
+    tableContainer.classList.add("hide");
+  }
+});
+
+// Create a table row for each object in the data array
+let data = localStorage.getItem("blogs");
+data = JSON.parse(data);
+for (let i = 0; i < data.length; i++) {
+  let row = table.insertRow();
+
+  // Create a table cell for each property in the object
+  let cell1 = row.insertCell(0);
+  cell1.innerHTML = data[i].title;
+
+  let cell2 = row.insertCell(1);
+  cell2.innerHTML = `<img src="${data[i].image}" alt="${data[i].title}" width="100" height="100">`;
+
+  let cell3 = row.insertCell(2);
+  cell3.innerHTML = data[i].content;
+
+  let cell4 = row.insertCell(3);
+  cell4.innerHTML = `<ul>${data[i].comments.map(comment => `<li>${comment}</li>`).join("")}</ul>`;
+
+  let cell5 = row.insertCell(4);
+  cell5.innerHTML = `${data[i].likes.length}`;
+
+  let cell6 = row.insertCell(5);
+  // Add an "Edit" button to the row
+  let editButton = document.createElement("button");
+  editButton.innerText = "Edit";
+  editButton.addEventListener("click", function() {
+    // Populate the row with input fields for editing
+    cell1.innerHTML = `<input type="text" value="${data[i].title}">`;
+    cell2.innerHTML = `<input type="text" value="${data[i].image}">`;
+    cell3.innerHTML = `<input type="text" value="${data[i].content}">`;
+    // Replace the "Edit" button with a "Save" button
+    cell6.innerHTML = "";
+    let saveButton = document.createElement("button");
+    saveButton.innerText = "Save";
+    saveButton.addEventListener("click", function() {
+      // Save the edited data to localStorage
+      data[i].title = cell1.querySelector("input").value;
+      data[i].image = cell2.querySelector("input").value;
+      data[i].content = cell3.querySelector("input").value;
+      localStorage.setItem("blogs", JSON.stringify(data));
+      // Refresh the table
+      window.location.reload();
+    });
+    cell6.appendChild(saveButton);
+  });
+  cell6.appendChild(editButton);
+
+  // Add a "Delete" button to the row
+  let deleteButton = document.createElement("button");
+  deleteButton.innerText = "Delete";
+  deleteButton.addEventListener("click", function() {
+    // Remove the object from the array
+    data.splice(i, 1);
+    // Update localStorage with the new array
+    localStorage.setItem("blogs", JSON.stringify(data));
+    // Refresh the table
+    window.location.reload();
+  });
+  cell6.appendChild(deleteButton);
+}
+</script>
+</body>
+</html>

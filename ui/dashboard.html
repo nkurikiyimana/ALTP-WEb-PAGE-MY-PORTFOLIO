@@ -24,10 +24,9 @@
   <div> <a href="./adminn.html"><button class="nwe-post">Add New-Post</button></div></a>
   <section class="menu">
     <div class="items">
-      <i class="fa-solid fa-message"></i> <a href="message">Message</a>
       <li><i class="fa-solid fa-user"></i> <a href="user">User</a></li>
-      <li><i class="fa-sharp fa-solid fa-blog"></i><a href="blogs">blog</a></li>
-      <li><i class="fa-sharp fa-solid fa-comments"></i> <a href="Comment">Comment</a></li>
+      <li><i class="fa-sharp fa-solid fa-blog"></i><a href="./querryblogs.html">Querry Blog with its specified comment and like</a></li>
+      
      
     </div>
   </div>
@@ -67,71 +66,158 @@
     }
   </style>
   
-  <script>
   
+<!-- Adding querry message in my Dashboard -->
 
-  // Get blog list from local storage
-let blogList = JSON.parse(localStorage.getItem("blogList")) || [];
+<header>
+  <div id="toggleTable"> <i class="fa-solid fa-message"></i> Message</div>
+</header>
 
-// Get blog list container
-const blogListContainer = document.getElementById("blog-list");
+<div id="myTable" class="hide">
+  <table class="space">
+    <thead>
+      <tr>
+        <th class="t1">Name</th>
+        <th class="t1">Email</th>
+        <th class="t1">Message</th>
+        <th class="t1">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- table rows will be dynamically added here -->
+    </tbody>
+  </table>
+</div>
 
-// Loop through blog list and create elements for each blog
-blogList.forEach((blog, index) => {
-  const blogItem = document.createElement("div");
-  blogItem.classList.add("blog-item");
 
-  const blogTitle = document.createElement("h2");
-  blogTitle.innerText = blog.title;
+<style>
+ #myTable{
+    background-image:url(./Images/sky.jpg) ;
+    background-size: cover;
+    font-size: 2rem;
+    margin: 1rem;
+  }
+.hide {
+  display: none;
+}
+#toggleTable{
+  color:blue;
+  font-size: 150%;
+  padding-bottom: 2rem;
+  text-align:center;
+}
+.t1{
+  color:blue;
+  font-size: 150%;
+}
+  .space2{
+    gap:.2rem;
+  }
+  .space{
+    padding: 2rem;
+    gap: 2rem;
+  }
+.hide {
+  display: none;
+}</style>
 
-  const blogDate = document.createElement("p");
-  blogDate.innerText = blog.date;
 
-  const blogImage = document.createElement("img");
-  blogImage.src = blog.image;
+<script>
+  // Get a reference to the table element
+let table = document.querySelector("#myTable table tbody");
 
-  const blogDesc = document.createElement("p");
-  blogDesc.innerText = blog.desc;
-
-  const editBtn = document.createElement("button");
-  editBtn.innerText = "Edit";
-  editBtn.onclick = () => {
-    // Code for editing the blog
-    const newTitle = prompt("Enter new title:", blog.title);
-    const newDate = prompt("Enter new date:", blog.date);
-    const newImage = prompt("Enter new image URL:", blog.image);
-    const newDesc = prompt("Enter new description:", blog.desc);
-    if (newTitle && newDate && newImage && newDesc) {
-      blog.title = newTitle;
-      blog.date = newDate;
-      blog.image = newImage;
-      blog.desc = newDesc;
-      localStorage.setItem("blogList", JSON.stringify(blogList));
-      blogTitle.innerText = blog.title;
-      blogDate.innerText = blog.date;
-      blogImage.src = blog.image;
-      blogDesc.innerText = blog.desc;
-    }
-  };
-
-  const deleteBtn = document.createElement("button");
-  deleteBtn.innerText = "Delete";
-  deleteBtn.onclick = () => {
-    blogList.splice(index, 1);
-    localStorage.setItem("blogList", JSON.stringify(blogList));
-    blogListContainer.removeChild(blogItem);
-  };
-
-  blogItem.appendChild(blogTitle);
-  blogItem.appendChild(blogDate);
-  blogItem.appendChild(blogImage);
-  blogItem.appendChild(blogDesc);
-  blogItem.appendChild(editBtn);
-  blogItem.appendChild(deleteBtn);
-
-  blogListContainer.appendChild(blogItem);
+// Add an event listener to the "Message" header
+let toggleButton = document.querySelector("#toggleTable");
+toggleButton.addEventListener("click", function() {
+  let tableContainer = document.querySelector("#myTable");
+  if (tableContainer.classList.contains("hide")) {
+    tableContainer.classList.remove("hide");
+  } else {
+    tableContainer.classList.add("hide");
+  }
 });
-  </script>
+
+// Create a table row for each object in the data array
+let data = localStorage.getItem("Contact");
+data = JSON.parse(data);
+for (let i = 0; i < data.length; i++) {
+  let row = table.insertRow();
+
+  // Create a table cell for each property in the object
+  let cell1 = row.insertCell(0);
+  cell1.innerHTML = data[i].name;
+
+  let cell2 = row.insertCell(1);
+  cell2.innerHTML = data[i].email;
+
+  let cell3 = row.insertCell(2);
+  cell3.innerHTML = data[i].message;
+
+  let cell4 = row.insertCell(3);
+  // Add an "Edit" button to the row
+  let editButton = document.createElement("button");
+  editButton.innerText = "Edit";
+  editButton.addEventListener("click", function() {
+    // Populate the row with input fields for editing
+    cell1.innerHTML = `<input type="text" value="${data[i].name}">`;
+    cell2.innerHTML = `<input type="text" value="${data[i].email}">`;
+    cell3.innerHTML = `<input type="text" value="${data[i].message}">`;
+    // Replace the "Edit" button with a "Save" button
+    cell4.innerHTML = "";
+    let saveButton = document.createElement("button");
+    saveButton.innerText = "Save";
+    saveButton.addEventListener("click", function() {
+      // Save the edited
+      // data back to localStorage and update the table row with the new values
+let editedName = cell1.querySelector("input").value;
+let editedEmail = cell2.querySelector("input").value;
+let editedMessage = cell3.querySelector("input").value;
+data[i].name = editedName;
+data[i].email = editedEmail;
+data[i].message = editedMessage;
+localStorage.setItem("Contact", JSON.stringify(data));
+cell1.innerHTML = editedName;
+cell2.innerHTML = editedEmail;
+cell3.innerHTML = editedMessage;
+// Replace the "Save" button with an "Edit" button
+cell4.innerHTML = "";
+let editButton = document.createElement("button");
+editButton.innerText = "Edit";
+editButton.addEventListener("click", function() {
+// Populate the row with the original values for editing
+cell1.innerHTML = data[i].name;
+cell2.innerHTML = data[i].email;
+cell3.innerHTML = data[i].message;
+cell4.innerHTML = "";
+cell4.appendChild(editButton);
+});
+cell4.appendChild(editButton);
+});
+cell4.appendChild(saveButton);
+});
+cell4.appendChild(editButton);
+
+// Add a "Delete" button to the row
+let deleteButton = document.createElement("button");
+deleteButton.innerText = "Delete";
+deleteButton.addEventListener("click", function() {
+// Remove the row from the table and the data from localStorage
+table.deleteRow(row.rowIndex - 1);
+data.splice(i, 1);
+localStorage.setItem("Contact", JSON.stringify(data));
+});
+cell4.appendChild(deleteButton);
+}
+
+</script>
+
+
+
+
+
+
+
+
 
 </body>
 </head>

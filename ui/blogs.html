@@ -298,14 +298,14 @@ blogList.forEach((blog, index) => {
   editBtn.onclick = () => {
     // Code for editing the blog
     const newTitle = prompt("Enter new title:", blog.title);
-    const newDate = prompt("Enter new date:", blog.date);
+    //const newDate = prompt("Enter new date:", blog.date);
     const newImage = prompt("Enter new image URL:", blog.image);
-    const newDesc = prompt("Enter new description:", blog.desc);
-    if (newTitle && newDate && newImage && newDesc) {
+    const newDesc = prompt("Enter new description:", blog.content);
+    if (newTitle && newDate && newImage && newContent) {
       blog.title = newTitle;
-      blog.date = newDate;
+      //blog.date = newDate;
       blog.image = newImage;
-      blog.desc = newDesc;
+      blog.content = newContent;
       localStorage.setItem("blogList", JSON.stringify(blogList));
       blogTitle.innerText = blog.title;
       blogDate.innerText = blog.date;
@@ -323,9 +323,9 @@ blogList.forEach((blog, index) => {
   };
 
   blogItem.appendChild(blogTitle);
-  blogItem.appendChild(blogDate);
+  //blogItem.appendChild(blogDate);
   blogItem.appendChild(blogImage);
-  blogItem.appendChild(blogDesc);
+  blogItem.appendChild(blogContact);
   blogItem.appendChild(editBtn);
   blogItem.appendChild(deleteBtn);
 

@@ -289,6 +289,7 @@ console.log(formData);
         })
         .then(response => {
           if (response.ok) {
+            alert(`meessage:"Thank you much!!!!!"`)
             // Handle successful submission
             console.log('Form submitted successfully!');
           } else {
@@ -300,17 +301,18 @@ console.log(formData);
           // Handle network error
           console.log('Network error. Please try again later.');
         });
+        form.reset
       });
 
 async function get() {
   // Send the form data to the API
-  axios.get('http://localhost:3000/api/Posts')
+  axios.get('http://localhost:3000/api/Contact')
 
   .then(response => {
   
       // Handle successful submission
       console.log(response.data)
-      localStorage.setItem("blogs", JSON.stringify(response.data));
+      localStorage.setItem("Contact", JSON.stringify(response.data));
     
   })
   .catch(error => {
@@ -320,8 +322,29 @@ async function get() {
 }
 
 
-      </script>
+// Post it on Specified page
 
+let data = localStorage.getItem("Contact");
+data = JSON.parse(data);
+// Get a reference to the table element
+let table = document.getElementById("myTable");
+
+// Create a table row for each object in the data array
+for (let i = 0; i < data.length; i++) {
+  let row = table.insertRow();
+
+  // Create a table cell for each property in the object
+  let cell1 = row.insertCell(0);
+  cell1.innerHTML = data[i].name;
+
+  let cell2 = row.insertCell(1);
+  cell2.innerHTML = data[i].email;
+
+  let cell3 = row.insertCell(2);
+  cell3.innerHTML = data[i].message;
+}
+      </script>
+<div id="myTable"></div>
 
     <section class="blogs" id="blogs">
      
