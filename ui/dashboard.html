@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <link rel="stylesheet" href="dashboard.css">
+  <title>dashboard</title>
+  
+<head>
+<body>
+  <section class="heading">
+    <header>
+    </div>
+     <nav>
+        <ul>
+          <li><a href="#" class="dash">Dash board</a></li>
+          <li><a href="./index.html">Log out</a></li>
+        </ul>
+      </nav>
+    </header>
+  </section>
+  <div> <a href="./adminn.html"><button class="nwe-post">Add New-Post</button></div></a>
+  <section class="menu">
+    <div class="items">
+      <li><i class="fa-solid fa-user"></i> <a href="user">User</a></li>
+      <li><i class="fa-sharp fa-solid fa-blog"></i><a href="./querryblogs.html">Querry Blog with its specified comment and like</a></li>
+      
+     
+    </div>
+  </div>
+  </section>
+ 
+
+  <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+
+
+<footer>
+  <div class="footer"> 
+    4<iconify-icon icon="akar-icons:facebook-fill"></iconify-icon><b>Musabwa Fanny</b><br>
+    5<iconify-icon icon="icon-park:instagram-one"></iconify-icon><b>Musemakweli Ketty</b><br>
+    8<iconify-icon icon="icon-park:twitter"></iconify-icon><b>Kasso</b><br
+    10<iconify-icon icon="uiw:github"></iconify-icon><b>@kevin</b>
+  </div>
+   <div>
+    <a href="index.html"<button>Connect to Us</button> </a>
+  </div>
+  
+
+</footer>
+  <!-- Comment items go here -->
+  <script src="https://code.iconify.design/iconify-icon/1.0.3/iconify-icon.min.js"></script>
+
+  <style>
+    #dash{
+      display:flex;
+      align-items: center;
+      background-image: url(./Images/sky.jpg);
+      background-size: cover;
+      width: fit-content;
+      font-size: 2rem;
+      margin-left: 15rem;
+  
+      padding: 2rem;
+    }
+  </style>
+  
+  
+<!-- Adding querry message in my Dashboard -->
+
+<header>
+  <div id="toggleTable"> <i class="fa-solid fa-message"></i> Message</div>
+</header>
+
+<div id="myTable" class="hide">
+  <table class="space">
+    <thead>
+      <tr>
+        <th class="t1">Name</th>
+        <th class="t1">Email</th>
+        <th class="t1">Message</th>
+       <div class="actiion"> <th class="t2">Actions</th> </div>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- table rows will be dynamically added here -->
+    </tbody>
+  </table>
+</div>
+
+
+<style>
+ #myTable{
+    background-image:url(./Images/sky.jpg) ;
+    background-size: cover;
+    font-size: 1rem;
+    margin: 1rem;
+    text-align: left;
+  }
+
+.hide {
+  display: none;
+}
+#toggleTable{
+  color:blue;
+  font-size: 40px;
+  padding-bottom: 2rem;
+  text-align:left;
+  gap:10px
+}
+.t1{
+  color:blue;
+  font-size: 150%;
+}
+  .space2{
+    gap:.2rem;
+  }
+  .space{
+    padding: 2rem;
+    gap: 2rem;
+  }
+.hide {
+  display: none;
+}
+@media only screen and (max-width: 600px) {
+  #myTable{
+    
+    font-size: 1rem;
+    margin: 0px;
+    text-align: left;
+  }
+
+.hide {
+  display: none;
+}
+#toggleTable{
+  color:blue;
+  font-size: 10px;
+  padding-bottom: .1rem;
+  text-align:left;
+  gap: 40px;
+}
+.t1{
+  color:blue;
+  font-size: px;
+}
+  .space2{
+    gap:.2rem;
+  }
+  .space{
+    padding: 2rem;
+    gap: .2rem;
+  }
+.hide {
+  display: none;
+}
+
+
+</style>
+
+
+<script>
+  // Get a reference to the table element
+let table = document.querySelector("#myTable table tbody");
+
+// Add an event listener to the "Message" header
+let toggleButton = document.querySelector("#toggleTable");
+toggleButton.addEventListener("click", function() {
+  let tableContainer = document.querySelector("#myTable");
+  if (tableContainer.classList.contains("hide")) {
+    tableContainer.classList.remove("hide");
+  } else {
+    tableContainer.classList.add("hide");
+  }
+});
+
+// Create a table row for each object in the data array
+let data = localStorage.getItem("Contact");
+data = JSON.parse(data);
+for (let i = 0; i < data.length; i++) {
+  let row = table.insertRow();
+
+  // Create a table cell for each property in the object
+  let cell1 = row.insertCell(0);
+  cell1.innerHTML = data[i].name;
+
+  let cell2 = row.insertCell(1);
+  cell2.innerHTML = data[i].email;
+
+  let cell3 = row.insertCell(2);
+  cell3.innerHTML = data[i].message;
+
+  let cell4 = row.insertCell(3);
+  // Add an "Edit" button to the row
+  let editButton = document.createElement("button");
+  editButton.innerText = "Edit";
+  editButton.addEventListener("click", function() {
+    // Populate the row with input fields for editing
+    cell1.innerHTML = `<input type="text" value="${data[i].name}">`;
+    cell2.innerHTML = `<input type="text" value="${data[i].email}">`;
+    cell3.innerHTML = `<input type="text" value="${data[i].message}">`;
+    // Replace the "Edit" button with a "Save" button
+    cell4.innerHTML = "";
+    let saveButton = document.createElement("button");
+    saveButton.innerText = "Save";
+    saveButton.addEventListener("click", function() {
+      // Save the edited
+      // data back to localStorage and update the table row with the new values
+let editedName = cell1.querySelector("input").value;
+let editedEmail = cell2.querySelector("input").value;
+let editedMessage = cell3.querySelector("input").value;
+data[i].name = editedName;
+data[i].email = editedEmail;
+data[i].message = editedMessage;
+localStorage.setItem("Contact", JSON.stringify(data));
+cell1.innerHTML = editedName;
+cell2.innerHTML = editedEmail;
+cell3.innerHTML = editedMessage;
+// Replace the "Save" button with an "Edit" button
+cell4.innerHTML = "";
+let editButton = document.createElement("button");
+editButton.innerText = "Edit";
+editButton.addEventListener("click", function() {
+// Populate the row with the original values for editing
+cell1.innerHTML = data[i].name;
+cell2.innerHTML = data[i].email;
+cell3.innerHTML = data[i].message;
+cell4.innerHTML = "";
+cell4.appendChild(editButton);
+});
+cell4.appendChild(editButton);
+});
+cell4.appendChild(saveButton);
+});
+cell4.appendChild(editButton);
+
+// Add a "Delete" button to the row
+let deleteButton = document.createElement("button");
+deleteButton.innerText = "Delete";
+deleteButton.addEventListener("click", function() {
+// Remove the row from the table and the data from localStorage
+table.deleteRow(row.rowIndex - 1);
+data.splice(i, 1);
+localStorage.setItem("Contact", JSON.stringify(data));
+});
+cell4.appendChild(deleteButton);
+}
+
+</script>
+
+
+
+
+
+
+
+
+
+</body>
+</head>
+</html>

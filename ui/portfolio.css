@@ -1,0 +1,822 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,200;0,300;0,500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,500;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "poppin", sans-serif;
+  box-sizing: border-box;
+}
+
+.header {
+  height: 4vh;
+  width: fit-content;
+  padding: 2rem;
+  background-color: none;
+  position: fixed;
+  float: left;
+  margin-left: 13rem;
+  color: blue;
+}
+
+.header:hover {
+  color: red;
+  text-transform: capitalize;
+
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hom {
+  display: flex;
+  flex-direction: row;
+  padding: 10rem;
+}
+
+.hom span {
+  color: #f9fdff;
+  margin-top: 3.2rem;
+  padding: 1rem;
+}
+
+.hom p {
+  padding: 1rem;
+  align-items: justify;
+  align-content: center;
+
+}
+
+.hom h1 span {
+  margin-top: 1rem;
+
+}
+
+.hom {
+
+  background-image: url(./Images/sky.jpg);
+  background-repeat: none;
+  background-position: center;
+  background-size: contain;
+}
+
+img {
+  border-radius: 30%;
+  display: flex;
+  flex-direction: column;
+  width: 170%
+}
+
+.container {
+  display: inline-block;
+  padding-left: 10rem;
+  padding-right: 1rem;
+  margin-top: 1rem;
+  text-align: justify;
+  font-size: 1.5rem;
+}
+
+hr {
+  border: 3px solid rgb(55, 211, 133);
+  background-color: rgb(0, 204, 255);
+}
+
+.btn {
+
+  border-radius: .3rem;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+.links {
+  padding: 2px;
+  margin-left: 15px;
+}
+
+.links li {
+  display: inline-block;
+  padding-bottom: 120px;
+
+}
+
+.links li a {
+  text-decoration: none;
+  color: rgb(252, 253, 253);
+  padding: 8px 0;
+}
+
+.links li a:hover {
+  text-decoration: none;
+  color: rgb(206, 29, 29);
+  padding: 8px 0;
+  text-decoration: underline;
+}
+
+body {
+  padding: .5rem;
+  top: 6rem
+}
+
+@media only screen and (max-width: 600px) {
+
+  .header,
+  nav {
+    display: block;
+    flex-direction: column;
+    font-size: .4rem;
+  }
+
+  .header {
+    margin-left: 0;
+  }
+
+  .hom span {
+    margin-top: .1rem;
+  }
+
+  .container {
+    font-size: .5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 2rem;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .header {
+    height: 8vh;
+    padding: 1rem;
+    font-size: .5rem;
+  }
+
+  .hom {
+    padding: 1rem;
+  }
+
+  .hom span {
+    font-size: 1rem;
+  }
+
+  .hom p {
+    font-size: 1rem;
+  }
+
+  .container {
+    font-size: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 1rem;
+  }
+
+  .btn {
+    padding: .5rem;
+    margin-top: 1rem;
+  }
+
+  #about .row {
+
+    display: block;
+
+  }
+}
+
+
+
+
+
+#about {
+  background-image: url(./Images/sky.jpg);
+  background-size: cover;
+  padding: 10rem;
+}
+
+#about .row {
+
+  display: flex;
+  padding-left: 1rem;
+  position: relative;
+  gap: 1rem;
+}
+
+#about .name {
+
+  display: flex;
+  padding-left: 15rem;
+  position: relative;
+  gap: 1rem;
+}
+
+#about .row .info {
+  margin-top: 2rem;
+  display: block;
+  border-radius: 2rem;
+}
+
+#about .row .info span {
+  color: white
+}
+
+#about .row .info h3 {
+  color: blue;
+  padding: 1.5rem;
+  width: 26rem;
+
+}
+
+#about .counter {
+  padding: 1.4rem;
+  display: flex;
+
+}
+
+#about .counter .boxx {
+  display: block;
+
+
+}
+
+#about .counter .boxxx {
+  display: block;
+  justify-content: space-between;
+
+}
+
+#about .counter .box {
+  font-size: 1.3rem;
+  padding: 3rem 3rem 3rem;
+  margin: 2rem;
+  display: flex;
+  background-color: #f7f7f8;
+  border-radius: 2rem;
+}
+
+#about .counter .box span {
+  color: rgb(5, 0, 0);
+}
+
+#about .counter .box h3 {
+  font-size: 2rem;
+  color: aqua;
+}
+
+#about .counter .box h3 {
+  opacity: 80%;
+}
+
+
+
+
+
+.education {
+  background-image: url(./Images/sky.jpg);
+  background-size: cover;
+}
+
+.education .box-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 8rem;
+  padding-left: .1rem;
+}
+
+.grade {
+  padding-left: 3rem;
+}
+
+.education .box-container .box {
+  width: 2rem;
+  margin: 2rem 2.5rem 3rem;
+  padding-left: 3.3rem;
+  border-left: 0.2rem solid #fff;
+  position: relative;
+}
+
+.education .box-container span {
+  font-size: 1.2rem;
+  gap: 2rem;
+  background: rgb(252, 250, 250);
+  color: rgb(28, 189, 230);
+  border-radius: 1rem;
+  padding: 1.1rem;
+  border: solid 2px blue;
+
+}
+
+.education .box-container h3 {
+  font-size: 1.5rem;
+  color: rgb(6, 6, 8);
+  padding-top: 1.13rem;
+  margin-top: 2rem;
+}
+
+.education .box-container p {
+  font-size: 1.5rem;
+  color: #fff;
+  padding-top: .7rem;
+  margin-top: 2rem;
+  font-weight: bolder;
+}
+
+iconify-icon {
+  display: block;
+}
+
+.portfolio {
+  padding: 13.1rem;
+  background-image: url(./Images/sky.jpg);
+  background-size: cover;
+}
+
+.portfolio h1 {
+  font-size: 2.3rem;
+  text-align: center;
+  color: rgb(14, 0, 0);
+  padding-top: 2rem;
+  font-weight: bold;
+}
+
+.portfolio .box-container {
+  display: flex;
+  gap: 1rem;
+  padding-right: 1rem;
+}
+
+
+.portfolio .box-container .box img {
+  width: 20rem;
+  height: 18rem;
+  cursor: pointer;
+  padding: 2rem;
+}
+
+b {
+  padding-left: 3rem;
+  text-align: center;
+  align-items: center;
+  color: rgb(14, 2, 2);
+  font-weight: bold;
+}
+
+.portfolio .box-container .box img:hover {
+  opacity: 0.3;
+  color: #14f7db
+}
+
+.contact-me {
+  background-image: url(./Images/sky.jpg);
+  padding: 10rem;
+  background-size: cover;
+}
+
+.contact-me h1 {
+  padding: 2rem;
+}
+
+iconify-icon {
+  margin-left: 2rem;
+}
+
+.contact-me p {
+  margin-left: 10rem;
+  font-size: 2rem;
+  padding: 1rem;
+}
+
+footer .name {
+  display: flex;
+  padding: 8rem;
+  margin-left: 5rem;
+
+}
+
+
+.form11 {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 2.5rem;
+
+}
+
+.four {
+  width: 250%;
+  display: flex;
+  gap: 1rem;
+  text-align: center;
+  align-items: center;
+}
+
+.four1 {
+
+  width: 250%;
+  display: flex;
+  gap: 1rem;
+}
+
+
+input[type="text"],
+input[type="location"],
+input[type="email"],
+textarea {
+  width: 249%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  height: 50%;
+}
+
+input[type="submit"] {
+  width: 250%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+
+
+
+@media (max-width: 768px) {
+
+  .four,
+  .four1 {
+    width: 100%;
+  }
+
+  .skills {
+    width: 100%;
+  }
+
+  .box {
+    display: block;
+    flex-direction: column-reverse;
+  }
+
+  .blogs {
+    width: 100%;
+    display: block;
+  }
+
+  .portfolio .box-container .box img {
+    width: 20%;
+  }
+
+  .box-container {
+    display: block;
+  }
+}
+
+
+
+
+.skills {
+  padding: 8rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  background-color: #43d37f;
+
+}
+
+.skills h4 {
+  color: blue;
+  padding-top: 2rem;
+}
+
+.skills h2 {
+  color: rgb(74, 50, 180);
+  text-align: center;
+}
+
+.skills h3 {
+  color: rgb(251, 251, 252);
+  text-align: center;
+}
+
+.skills .box-container {
+  display: flex;
+  gap: 3rem;
+  padding-top: 2rem;
+}
+
+.skills img {
+  width: 25rem;
+}
+
+.blogs {
+  font-size: 1.19rem;
+  padding: 1rem;
+  font-weight: bold;
+  color: white;
+  gap: 1rem;
+  display: block;
+  background-image: url(./Images/sky.jpg);
+  background-size: cover;
+
+}
+
+
+
+.blogs img {
+
+  width: 40%;
+  height: 20rem;
+  align-items: center;
+  margin-left: 30rem;
+  align-content: center;
+  padding-top: 6rem;
+}
+
+
+.blogs .title {
+  padding: 1rem;
+  text-align: center;
+  align-content: center;
+  color: #45a049;
+}
+
+.blogs p {
+  font-weight: bold;
+  padding: 2rem;
+  color: #080808;
+  font-size: 2rem;
+}
+
+button {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.rd {
+  text-align: center;
+  padding-top: 0rem;
+  color: blue;
+}
+
+.rd:hover {
+  color: rgb(241, 8, 8);
+
+  background-color: #14f7db;
+
+}
+
+#login {
+  background-image: url(./Images/sky.jpg);
+  padding: .3rem;
+  background-size: cover;
+}
+
+.loginmsg {
+  font-size: .7rem;
+}
+
+.me {
+  width: 20%;
+  position: relative;
+  margin-left: 15rem;
+}
+
+#login-form {
+  border-radius: 10%;
+  padding: 2rem;
+  border: 2px solid #ccc;
+  margin-top: 8rem;
+  margin-left: 30rem;
+  width: fit-content;
+}
+
+#login-form h2 {
+  text-align: center;
+  padding: .7rem;
+}
+
+#login-form p {
+  text-align: center;
+  padding: .7rem;
+}
+
+.form {
+  background-color: white;
+  padding: 4rem;
+  border-radius: 20%;
+  border: solid blue;
+}
+
+
+
+
+
+/* Full-width input fields */
+
+
+#login-form input[type=email] {
+  border-radius: 5rem;
+  padding: 1rem;
+  display: flex;
+  border: solid rgb(251, 252, 252);
+  font-size: 1.0rem;
+  width: 100%
+}
+
+
+
+#login-form input[type=password] {
+  border-radius: 5rem;
+  padding: 1rem;
+  display: flex;
+  border: solid rgb(251, 252, 252);
+  font-size: 1.0rem;
+  width: 100%
+}
+
+
+#login-form input[type=email]:focus,
+input[type=password]:focus {
+  outline: none;
+}
+
+
+#login-form input[type=submit] {
+  background-color: green;
+  padding: .8rem;
+  border-radius: 4rem;
+  margin-left: 1rem;
+  margin: 1rem;
+  width: 100%
+}
+
+#login-form .icon {
+  display: flex;
+  margin-left: 12rem;
+  padding: 1rem;
+}
+
+@media (max-width: 600px) {
+  .header {
+    height: 6vh;
+    padding: 1rem;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  #about {
+    padding: 1rem;
+    padding-inline: 0px;
+  }
+
+  body {
+    display: block;
+  }
+
+  #about .row {
+
+    display: block;
+    padding-left: .1rem;
+    position: relative;
+  }
+
+  #about .counter {
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  #about .counter .box {
+    font-size: .4rem;
+    padding: .3rem .3rem .3rem;
+    margin: .2rem;
+    display: flex;
+    flex-direction: column;
+    background-color: #f7f7f8;
+    border-radius: .2rem;
+  }
+
+  #about .name{
+    padding-left: 0px;
+  }
+
+  .skills{
+    padding-inline: 0px;
+  }
+
+  .skills .box-container{
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .skills img{
+    max-width: 80%;
+    width: 80%;
+    margin: auto;
+  }
+
+  .portfolio{
+    width: 100%;
+    padding-inline: 0px;
+  }
+
+  .blogs img{
+    margin-inline: 0px;
+  }
+
+  .contact-me{
+    padding-inline: 0px;
+    padding-block: 2rem;
+  }
+
+  .contact-me p{
+    margin-left: 0px;
+  }
+
+  .form11{
+    margin-inline: 10px;
+  }
+  input[type="text"], input[type="location"], input[type="email"], textarea, input[type="submit"]{
+    width: 90%;
+    margin-inline: auto;
+  }
+
+  footer .name{
+    padding-inline: 0px;
+    margin-inline: 0px;
+    flex-wrap: wrap;
+  }
+
+  #login-form{
+    margin: 0px;
+    padding-inline: 5px;
+    width: 80%;
+    margin: auto;
+  }
+
+  .me{
+    margin-left: 0px;
+    margin: auto;
+  }
+
+  #login-form .icon{
+    margin-left: 0px;
+  }
+
+  #about .name{
+    flex-wrap: wrap;
+  }
+
+  #about .row .info h3{
+    width: 90%;
+  }
+  .links li{
+    margin: 0px;
+  }
+
+  .portfolio .box-container{
+    flex-direction: column;
+  }
+
+  .portfolio .box-container .box img{
+    width: 100%;
+  }
+
+  .box-container{
+    margin-inline: 0px;
+  }
+
+  .box-container{
+    padding-inline: 0px;
+  }
+  
+  .education .box-container{
+    padding-inline: 0px;
+    padding-block: 40px;
+  }
+
+  .links li {
+    margin-inline: 4px;
+  }
+
+  .education .box-container .box{
+    margin: 0px;
+    margin-block: 40px;
+  }
+  .grade{
+    margin-left: 0px;
+  }
+
+  
+}

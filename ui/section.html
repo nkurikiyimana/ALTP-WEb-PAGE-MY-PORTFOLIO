@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=D, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <div class="say">
+      <H1>check my Level</H1>  </div>
+      <div class="check">
+    <form id="form">
+        <input type="text" name="name" id="name" placeholder="Enter my name"></div>
+        <textarea name="name" id="Comment" cols="30" rows="10" placeholder="Please comment on our page"></textarea>
+        <input type="submit" value="sumit">
+    </form>
+  </div>
+
+      <Style>
+   .check{
+ margin-top: 1rem;
+  margin-left: 0rem;
+display: flex;
+font-family: sans-serif;
+align-items: center;
+
+        }
+#form{
+  margin-right: 2rem;
+ 
+}
+ </Style>
+  
+  <script>
+
+const form = document.getElementById('form');
+form.addEventListener('submit', e=>{
+  e.preventDefault();
+
+const name1 = document.getElementById('name');
+const comment1 = document.getElementById('comment');
+localStorage.setItem('name1', name1);
+localStorage.setItem('comment1',comment1);
+
+console.log(comment1);
+form.reset();
+alert("Well Done!!!!!")
+});
+
+ 
+  </script>
+</body>
+</html>

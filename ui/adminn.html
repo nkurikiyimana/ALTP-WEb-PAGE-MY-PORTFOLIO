@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add blog</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<Style>
+
+  .blogg{
+    background-image: url(./Images/sky.jpg);
+    padding: 14rem;
+    background-size: cover;
+  }
+  #blog-form{
+    padding: 4rem;
+    border: solid white;
+    border-radius: 5%;
+    margin-top: 1rem;
+   
+  }
+</Style>
+<div class="blogg">
+  <form id="blog-form">
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title">
+    <br>
+    <!-- <input type="date" id="date"> -->
+    <label for="image">Image:</label>
+    <input type="file" id="image" name="image">
+    <br>
+    <label for="content">Content:</label>
+    <textarea id="content" name="Content"></textarea>
+    <br>
+    <button type="submit" id="submit-blog">Submit</button>
+  </form>
+  
+</div>
+
+<div id="notification">
+  <p id="notification-message"></p>
+</div>
+
+
+  <style>
+    #notification{
+      background-color: blue;
+      width: fit-content;
+      display: block;
+      margin-left: 70rem;
+      float: top;
+
+    }
+#notification-message{
+  font-size: 1.3rem;
+  color: white;
+      } 
+      
+    </style>
+
+<script>
+
+
+
+</Script>
+</body>
+</html>
