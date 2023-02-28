@@ -8,3 +8,4 @@ const list = document.querySelectorAll('.list');
 
 list.style.fontsize='2rem';
 console.log(list);
+console.log(data)
