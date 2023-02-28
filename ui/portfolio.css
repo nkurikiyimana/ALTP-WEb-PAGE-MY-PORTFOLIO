@@ -93,12 +93,12 @@ hr {
 
 .links {
   padding: 2px;
-  margin-left: 60px;
+  margin-left: 15px;
 }
 
 .links li {
   display: inline-block;
-  margin: 0 15px;
+  padding-bottom: 120px;
 
 }
 

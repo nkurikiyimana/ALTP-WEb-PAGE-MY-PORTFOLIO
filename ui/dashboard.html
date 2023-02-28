@@ -80,7 +80,7 @@
         <th class="t1">Name</th>
         <th class="t1">Email</th>
         <th class="t1">Message</th>
-        <th class="t1">Actions</th>
+       <div class="actiion"> <th class="t2">Actions</th> </div>
       </tr>
     </thead>
     <tbody>
@@ -94,17 +94,20 @@
  #myTable{
     background-image:url(./Images/sky.jpg) ;
     background-size: cover;
-    font-size: 2rem;
+    font-size: 1rem;
     margin: 1rem;
+    text-align: left;
   }
+
 .hide {
   display: none;
 }
 #toggleTable{
   color:blue;
-  font-size: 150%;
+  font-size: 40px;
   padding-bottom: 2rem;
-  text-align:center;
+  text-align:left;
+  gap:10px
 }
 .t1{
   color:blue;
@@ -119,7 +122,42 @@
   }
 .hide {
   display: none;
-}</style>
+}
+@media only screen and (max-width: 600px) {
+  #myTable{
+    
+    font-size: 1rem;
+    margin: 0px;
+    text-align: left;
+  }
+
+.hide {
+  display: none;
+}
+#toggleTable{
+  color:blue;
+  font-size: 10px;
+  padding-bottom: .1rem;
+  text-align:left;
+  gap: 40px;
+}
+.t1{
+  color:blue;
+  font-size: px;
+}
+  .space2{
+    gap:.2rem;
+  }
+  .space{
+    padding: 2rem;
+    gap: .2rem;
+  }
+.hide {
+  display: none;
+}
+
+
+</style>
 
 
 <script>
