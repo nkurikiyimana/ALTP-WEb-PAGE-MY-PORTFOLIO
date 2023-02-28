@@ -8,10 +8,7 @@
     <link rel="stylesheet" href="portfolio.css" />
 
    
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awaresome/5.15.2/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awaresome/5.15.2/css/all.min.css"/>
     <link rel="stylesheet" href="css/style.css" />
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -37,11 +34,8 @@
     <body onload="get()">
 
       <section class="hom" id="home">
-        <div>
-          <img src="./Images/me.jpg" alt="Faustin">
-        </div>
+        <div> <img src="./Images/me.jpg" alt="Faustin"></div>
          <div class="container">
-          
         <h1><span>HI</span> THERE <span>👋</span></h1>
         <h2>I'AM <span>Faustin Nkuru</span></h2>
         <p><hr>
@@ -52,10 +46,9 @@
           💞️ I’m looking to collaborate on Asking Influencer to Become a Brand Developer.
           📫 How to reach me Visit all for more information.
         </p>
-<hr>
+        <hr>
         <a href="#about"> <button class="btn"> About me</button></a>
       </div>
-      
       </section>
       
 
@@ -68,11 +61,10 @@
           <h3><span>Qualification : </span>bms</h3>
           <h3><span>Post : </span>front end developer</h3>
           <h3><span>Language : </span> English</h3>
-          <a href="./cv.html"
-            ><button class="btn">download cv<iconify-icon icon="material-symbols:download-for-offline">
+          <a href="./cv.html" ><button class="btn">download cv<iconify-icon icon="material-symbols:download-for-offline">
             </iconify-icon></button></a>
         </div>
- 
+  
         <div class="counter">
           <div class="boxxx">
           <div class="box">
@@ -280,7 +272,7 @@
         };
 console.log(formData);
         // Send the form data to the API
-        fetch('https://anxious-worm-outerwear.cyclic.app/api/Contact', {
+        fetch(`https://anxious-worm-outerwear.cyclic.app/api/Contact`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -306,7 +298,7 @@ console.log(formData);
 
 async function get() {
   // Send the form data to the API
-  axios.get('http://localhost:3000/api/Contact')
+  axios.get(`https://anxious-worm-outerwear.cyclic.app/api/Contact`)
 
   .then(response => {
   
@@ -399,10 +391,9 @@ for (let i = 0; i < data.length; i++) {
     </div>
       </form>
     
- 
-</div>
+
     
-</style> 
+
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

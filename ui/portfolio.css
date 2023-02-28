@@ -15,7 +15,7 @@
   background-color: none;
   position: fixed;
   float: left;
-  margin-left: 13rem;
+  margin-left: 12rem;
   color: blue;
 }
 
@@ -92,19 +92,19 @@ hr {
 }
 
 .links {
-  padding: 2px;
-  margin-left: 15px;
+  padding-top: 5rem;
+  margin-left: 1px;
 }
 
 .links li {
   display: inline-block;
   padding-bottom: 120px;
-
 }
 
 .links li a {
+  margin: 1rem;
   text-decoration: none;
-  color: rgb(252, 253, 253);
+  color: rgb(8, 8, 8);
   padding: 8px 0;
 }
 
