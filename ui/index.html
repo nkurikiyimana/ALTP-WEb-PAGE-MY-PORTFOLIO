@@ -296,6 +296,47 @@ console.log(formData);
         form.reset
       });
 
+    
+
+  // Get the data and display it on the page
+  const getDataAndDisplay = () => {
+    fetch('https://anxious-worm-outerwear.cyclic.app/api/Contact')
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          console.log('Error getting data.');
+        }
+      })
+      .then(data => {
+        // Display the data on the page
+        const table = document.getElementById('table');
+        table.innerHTML = '';
+        data.forEach(item => {
+          const row = table.insertRow();
+          const nameCell = row.insertCell(0);
+          const emailCell = row.insertCell(1);
+          const messageCell = row.insertCell(2);
+          nameCell.innerHTML = item.name;
+          emailCell.innerHTML = item.email;
+          messageCell.innerHTML = item.message;
+        });
+      })
+      .catch(error => {
+        console.log('Network error. Please try again later.');
+      });
+  };
+
+  // Call the getDataAndDisplay function when the page loads
+  window.onload = () => {
+    getDataAndDisplay();
+  };
+
+
+
+
+
+
 async function get() {
   // Send the form data to the API
   axios.get(`https://anxious-worm-outerwear.cyclic.app/api/Contact`)
