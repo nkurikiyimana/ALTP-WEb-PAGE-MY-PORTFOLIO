@@ -5,34 +5,79 @@
   box-sizing: border-box;
 }
 
-form {
-  width: 500px;
-  margin: 0 auto;
+.blogg{
+  background-image: url(./Images/sky.jpg);
+  padding: 14rem;
+  background-size: cover;
+}
+
+#blog-form{
+
+  padding: 1rem;
+  border: solid white;
+  border-radius: 5%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 label {
   display: block;
   margin-bottom: 10px;
+  margin-left: 4rem;
+  margin-top: 1rem;
 }
 
 input[type="text"], textarea {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
-  box-sizing: border-box;
-}
-input[type="date"] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
 }
 
 input[type="submit"] {
   background-color: #4CAF50;
   color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
+  text-align: center;
+  
+}
+#submit-blog{
+  width:100%;
+  border-radius: 2rem;
+  padding:.5rem;
+  background-color:blue;
+}
+
+@media (max-width: 600px) {
+  .blogg {
+    padding: 0px;
+    padding-right: 20rem;
+  }
+  input[type="submit"] {
+   margin-left: 1rem;
+    
+  }
+  input[type="text"], textarea {
+    margin-left: 1.2rem;
+  }
+  #submit-blog{
+    width:90%;
+    border-radius: 2rem;
+   margin-left:1rem;
+    
+  }
+
+  #blog-form{
+width:80%
+
+  }
+  #blog-form{
+
+    padding: 0.2rem;
+    border: solid white;
+    border-radius: 5%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 380%;
+  }
+
+  
 }
